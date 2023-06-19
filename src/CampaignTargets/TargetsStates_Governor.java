@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
 
 import CampaignSettings.Elements;
 
-public class Targets_State {
+public class TargetsStates_Governor {
 
 	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String args[]) throws InterruptedException, AWTException {
@@ -107,7 +107,7 @@ public class Targets_State {
 		// 					// _clickStateTextArea.click();
 		// 					// Thread.sleep(1000);
 		// 					// _clickStateTextArea.sendKeys("Arizona");
-		//		 					 Thread.sleep(1000);
+		// 					// Thread.sleep(1000);
 		// 					// robot.keyPress(KeyEvent.VK_ENTER);
 		// 					// Thread.sleep(50);
 									
@@ -129,8 +129,17 @@ public class Targets_State {
 							} catch (IOException e) {
 								System.out.println(e.getMessage());
 							}
-
+							
 								Thread.sleep(300);
+								//System.out.println("=====================================================");
+								System.out.println("Select State Governor..");
+								System.out.println("=====================================================");
+								WebElement _clickGovernor = driver.findElement
+								(By.cssSelector(_elements._state_Governor));
+								Thread.sleep(300);
+								_clickGovernor.click();
+								Thread.sleep(6000);
+								
 								//System.out.println("=====================================================");
 								System.out.println("Select State Country..");
 								System.out.println("=====================================================");
@@ -138,7 +147,7 @@ public class Targets_State {
 								(By.cssSelector(_elements._selectCountryState));
 								Thread.sleep(300);
 								_clickCountry.click();
-								Thread.sleep(3000);
+								Thread.sleep(6000);
 								
 								//System.out.println("=====================================================");
 								System.out.println("Click Select All Button..");
@@ -182,21 +191,21 @@ public class Targets_State {
 																	//System.out.println("=====================================================");
 																	System.out.println("Taking Screenshot - ViewAdded Targets..");
 																	System.out.println("=====================================================");	
-																	Thread.sleep(6000);					
+																	Thread.sleep(3000);					
 																	FileUtils.copyFile(_addedTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/StateView_AddedTargets.png"));   	           
 																	Thread.sleep(2000);												
 																} catch (IOException e) {
 																	System.out.println(e.getMessage());
 																}																	
-																	Thread.sleep(4000);
-																	System.out.println("Clicking (X) Remove Button..");
-																	System.out.println("=====================================================");
-																	WebElement _clickRemoveButton_X = driver.findElement
-																	(By.cssSelector(_elements._X_removeButton));
-																	Thread.sleep(300);
-																	_clickRemoveButton_X.click();										
-																	Thread.sleep(10000);
-																																	
+//																	Thread.sleep(4000);
+//																	System.out.println("Clicking (X) Remove Button..");
+//																	System.out.println("=====================================================");
+//																	WebElement _clickRemoveButton_X = driver.findElement
+//																	(By.cssSelector(_elements._X_removeButton));
+//																	Thread.sleep(300);
+//																	_clickRemoveButton_X.click();										
+//																	Thread.sleep(10000);
+																	Thread.sleep(4000);															
 																	System.out.println("Clicking Remove All Button..");
 																	System.out.println("=====================================================");
 																	Thread.sleep(2000);

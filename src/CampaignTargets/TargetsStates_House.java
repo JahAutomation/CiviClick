@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
 
 import CampaignSettings.Elements;
 
-public class Targets_State {
+public class TargetsStates_House {
 
 	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String args[]) throws InterruptedException, AWTException {
@@ -59,10 +59,13 @@ public class Targets_State {
 		_loginButton.click();
 		Thread.sleep(10000);
 
+		//System.out.println("=====================================================");
+		System.out.println("Click Data..");
+		System.out.println("=====================================================");
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Targets Tab..");
@@ -80,10 +83,10 @@ public class Targets_State {
 		File _congressMainPage = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 							try {
 								//System.out.println("=====================================================");
-								System.out.println("Taking Screenshot - Targets Congress Page..");
+								System.out.println("Taking Screenshot - Targets Main Page..");
 								System.out.println("=====================================================");	
 								Thread.sleep(3000);					
-								FileUtils.copyFile(_congressMainPage, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/CongressMainPage.png"));   	           
+								FileUtils.copyFile(_congressMainPage, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/TargetsMainPage.png"));   	           
 								Thread.sleep(2000);												
 							} catch (IOException e) {
 								System.out.println(e.getMessage());
@@ -96,7 +99,7 @@ public class Targets_State {
 				(By.cssSelector(_elements._statesTab));
 				Thread.sleep(1000);
 				_gotoStatesTab.click();
-				Thread.sleep(7000);
+				Thread.sleep(9000);
 
 		// 					// //System.out.println("=====================================================");
 		// 					// System.out.println("Click States Search Area..");
@@ -107,7 +110,7 @@ public class Targets_State {
 		// 					// _clickStateTextArea.click();
 		// 					// Thread.sleep(1000);
 		// 					// _clickStateTextArea.sendKeys("Arizona");
-		//		 					 Thread.sleep(1000);
+		// 					// Thread.sleep(1000);
 		// 					// robot.keyPress(KeyEvent.VK_ENTER);
 		// 					// Thread.sleep(50);
 									
@@ -129,17 +132,17 @@ public class Targets_State {
 							} catch (IOException e) {
 								System.out.println(e.getMessage());
 							}
-
+							
 								Thread.sleep(300);
 								//System.out.println("=====================================================");
-								System.out.println("Select State Country..");
+								System.out.println("Select State House..");
 								System.out.println("=====================================================");
-								WebElement _clickCountry = driver.findElement
-								(By.cssSelector(_elements._selectCountryState));
+								WebElement _clickHouse = driver.findElement
+								(By.cssSelector(_elements._state_House));
 								Thread.sleep(300);
-								_clickCountry.click();
-								Thread.sleep(3000);
-								
+								_clickHouse.click();
+								Thread.sleep(10000);
+														
 								//System.out.println("=====================================================");
 								System.out.println("Click Select All Button..");
 								System.out.println("=====================================================");
@@ -147,7 +150,7 @@ public class Targets_State {
 								(By.cssSelector(_elements._selectAllButton));
 								Thread.sleep(1000);
 								_clickSelectAllButton.click();
-								Thread.sleep(2000);
+								Thread.sleep(6000);
 
 										//System.out.println("=====================================================");
 										System.out.println("Click Add Selected Button..");
@@ -162,9 +165,9 @@ public class Targets_State {
 													//System.out.println("=====================================================");
 													System.out.println("Taking Screenshot - Selected All Targets..");
 													System.out.println("=====================================================");	
-													Thread.sleep(5000);					
-													FileUtils.copyFile(_state, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/State_SelectedTargets.png"));   	           
-													Thread.sleep(2000);												
+													Thread.sleep(9000);					
+													FileUtils.copyFile(_state, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/State_House_SelectedTargets.png"));   	           
+													Thread.sleep(4000);												
 												} catch (IOException e) {
 													System.out.println(e.getMessage());
 												}
@@ -176,14 +179,14 @@ public class Targets_State {
 													(By.cssSelector(_elements._viewAddedTargets));
 													Thread.sleep(1000);
 													_clickViewAddedTargets.click();
-													Thread.sleep(3500);
+													Thread.sleep(7000);
 													File _addedTargets = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 																try {
 																	//System.out.println("=====================================================");
 																	System.out.println("Taking Screenshot - ViewAdded Targets..");
 																	System.out.println("=====================================================");	
-																	Thread.sleep(6000);					
-																	FileUtils.copyFile(_addedTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/StateView_AddedTargets.png"));   	           
+																	Thread.sleep(3000);					
+																	FileUtils.copyFile(_addedTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/StateView_House_AddedTargets.png"));   	           
 																	Thread.sleep(2000);												
 																} catch (IOException e) {
 																	System.out.println(e.getMessage());
@@ -196,7 +199,7 @@ public class Targets_State {
 																	Thread.sleep(300);
 																	_clickRemoveButton_X.click();										
 																	Thread.sleep(10000);
-																																	
+																														
 																	System.out.println("Clicking Remove All Button..");
 																	System.out.println("=====================================================");
 																	Thread.sleep(2000);
@@ -204,14 +207,14 @@ public class Targets_State {
 																	(By.cssSelector(_elements._removeALLButton));
 																	Thread.sleep(1000);
 																	_clickRemoveALLButton.click();										
-																	Thread.sleep(11000);
+																	Thread.sleep(27000);
 																	File _removeAllTargets = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 																				try {
 																					//System.out.println("=====================================================");
 																					System.out.println("Taking Screenshot - Remove All Targets..");
 																					System.out.println("=====================================================");	
-																					Thread.sleep(7500);					
-																					FileUtils.copyFile(_removeAllTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/CongressHouseDemocratState_RemoveAllTargets.png"));   	           
+																					Thread.sleep(10000);					
+																					FileUtils.copyFile(_removeAllTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/State_House_RemoveAllTargets.png"));   	           
 																					Thread.sleep(2000);												
 																				} catch (IOException e) {
 																					System.out.println(e.getMessage());
