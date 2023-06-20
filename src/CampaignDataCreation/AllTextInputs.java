@@ -37,5 +37,19 @@ public class AllTextInputs {
 	public String _campaignPageTitle = "JahAutomationTesting";
 	public String _campaignPageBody = "Automated testing is a software testing technique that automates the process of validating the functionality of software and ensures it meets requirements before being released into production. With automated testing, an organization can run specific software tests at a faster pace without human testers..";
 	
+	public String _customCreationCity = "Cebu";
+	public String _customCreationName = "FammyT";
+	public String _customCreationPosition = "QA Tester";
+	public String _customCreationEmail = "jah+14@mvp.dev";
+	public String _customCreationPhone = "1233455678";
+	
+	public String _searchCongress = "Markey";
+	public String _searchState = "Acosta";
+	public String _customState = "FammyT";
+
+
+
+
+	
 	
 }
