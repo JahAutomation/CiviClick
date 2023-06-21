@@ -16,9 +16,6 @@ import CampaignDataCreation.AllTextInputs;
 import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
 import CampaignSettings.Elements;
 
 public class Targets_CustomTargets_BulkCreation {
@@ -33,7 +30,7 @@ public class Targets_CustomTargets_BulkCreation {
 		Browser _browser = new Browser();
 		AllTextInputs _allText = new AllTextInputs();
 		Elements _elements = new Elements();
-		Robot robot = new Robot(); 
+		
 				
 		// System.setProperty(_browser._browserPath, _browser._chromeDriver);
 		// WebDriver driver = new ChromeDriver();
@@ -59,7 +56,7 @@ public class Targets_CustomTargets_BulkCreation {
 		WebElement _loginButton = driver.findElement
 		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(10000);
+		Thread.sleep(17000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));

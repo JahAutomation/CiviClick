@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot; 
@@ -21,14 +22,17 @@ public class CampaginDataCreation {
 		CampaignElements _campaign = new CampaignElements();
 		AllTextInputs _allTextInputs = new AllTextInputs();
 		Browser _browser = new Browser();
-		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-				
-		String _var1 = "";
-		
-		WebDriver driver = new ChromeDriver();
+
+		// System.setProperty(_browser._browserPath, _browser._chromeDriver);			
+		// WebDriver driver = new ChromeDriver();
+		WebDriver driver = new SafariDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
-		
+		String _var1 = "";
+		// ==============================================================
+		System.out.println("=====================================================");
+		System.out.println("Log In..");
+		System.out.println("=====================================================");
 		//============================================================== L O G I N =================================================//
 		Thread.sleep(6000);
 		WebElement _email = driver.findElement
@@ -42,13 +46,13 @@ public class CampaginDataCreation {
 		WebElement _loginButton = driver.findElement
 		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(15000);			
+		Thread.sleep(10000);			
 		
 		//================================================= C A M P A I G N   C R E A T I O N ==============================================//		
 		WebElement _createCampaign = driver.findElement
 		(By.cssSelector(_campaign._createCampaign));
 		_createCampaign.click();
-		Thread.sleep(10000);
+		Thread.sleep(9000);
 
 			WebElement _campaignNameTextArea = driver.findElement
 			(By.xpath(_campaign._campaignNameTextArea));
@@ -110,7 +114,7 @@ public class CampaginDataCreation {
 								(By.cssSelector(_campaign._widgetQ_UseQ_CancelButton));
 								Thread.sleep(300);
 								_widgetQ_UseQ_CancelButton.click();
-								Thread.sleep(500);
+								Thread.sleep(1000);
 		
 		//=================================================== S H O R T   T E X T ===================================================//		
 		WebElement _widgetQ_CreateQ = driver.findElement
@@ -170,7 +174,7 @@ public class CampaginDataCreation {
 											Thread.sleep(1000);		
 			
 		//=================================================== R A D I O =====================================================//			
-		Thread.sleep(1000);
+		Thread.sleep(1300);
 		WebElement _widgetQ_CreateQ_Radio= driver.findElement
 		(By.cssSelector(_campaign._widgetQ_CreateQ));
 		_widgetQ_CreateQ_Radio.click();
@@ -211,7 +215,7 @@ public class CampaginDataCreation {
 								Thread.sleep(200);	
 		
 		//=================================================== C H E C K B O X =====================================================//				
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		WebElement _widgetQ_CreateQ_CheckBox= driver.findElement
 		(By.cssSelector(_campaign._widgetQ_CreateQ));
 		_widgetQ_CreateQ_CheckBox.click();
@@ -322,7 +326,7 @@ public class CampaginDataCreation {
 										WebElement _emailContent_PreviewCloseButton = driver.findElement
 										(By.cssSelector(_campaign._emailContentPreviewButton));
 										_emailContent_PreviewCloseButton.click();
-										Thread.sleep(3000);
+										Thread.sleep(6000);
 		
 		WebElement _gotoEmailLegislatorArea1 = driver.findElement
 		(By.xpath(_campaign._gotoSubjectArea));
@@ -353,7 +357,7 @@ public class CampaginDataCreation {
 								System.out.println("Taking Screenshot..");
 								System.out.println("=====================================================");
 							
-					            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\CampaignDataCreation.png"));   	           
+					            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/CampaignCreation/NewCampaignCreated.png"));   	           
 					            Thread.sleep(2000);
 					                 	            
 					        } catch (IOException j) {

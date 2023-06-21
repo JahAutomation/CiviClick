@@ -2,7 +2,7 @@ package CampaignDataCreation;
 
 public class AllTextInputs {
 
-	public String _campaignName_Value = "Testing2";
+	public String _campaignName_Value = "K01";
 	public String _pathBackgroundImage = "C:\\Users\\Jahh\\Desktop\\BackGround";
 	public String _basic_Content_WdigetTitle_TextAreaInput = "Test";
 	public String _createQ_Input = "Testing";

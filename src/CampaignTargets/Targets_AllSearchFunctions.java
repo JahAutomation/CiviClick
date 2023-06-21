@@ -57,7 +57,7 @@ public class Targets_AllSearchFunctions {
 		WebElement _loginButton = driver.findElement
 		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(17000);
+		Thread.sleep(10000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));

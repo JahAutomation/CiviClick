@@ -99,14 +99,14 @@ public class Targets_CustomTargets_Creation {
 				_gotoCustomTargtesTab.click();
 				Thread.sleep(9000);
 
-				//System.out.println("=====================================================");
-				System.out.println("Click Manage Custom Targets..");
-				System.out.println("=====================================================");
-				WebElement _clickManageCustomTargets = driver.findElement
-				(By.cssSelector(_elements._manageCustomTargets));
-				Thread.sleep(1000);
-				_clickManageCustomTargets.click();
-				Thread.sleep(4000);
+							//System.out.println("=====================================================");
+							System.out.println("Click Manage Custom Targets..");
+							System.out.println("=====================================================");
+							WebElement _clickManageCustomTargets = driver.findElement
+							(By.cssSelector(_elements._manageCustomTargets));
+							Thread.sleep(1000);
+							_clickManageCustomTargets.click();
+							Thread.sleep(4000);
 		
 				//System.out.println("=====================================================");
 				System.out.println("Click Create Custom Targets Button..");
