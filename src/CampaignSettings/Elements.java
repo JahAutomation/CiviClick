@@ -26,7 +26,7 @@ public class Elements {
 	public String _clickSendThankYouEmailCheckBox = "#xscroll > div.bubble-element.Group.baTaIbi0.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaNl1.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaNn1.bubble-r-container.flex.row > button > svg";
 	public String _sendFromNameTextArea = "#xscroll > div.bubble-element.Group.baTaIbi0.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaNl1.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaNq1.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaOaL1.bubble-r-container.flex.column > input";
 	public String _sendFromEmailTextArea = "#xscroll > div.bubble-element.Group.baTaIbi0.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaNl1.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaNq1.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaOaS1.bubble-r-container.flex.column > input";
-	public String _emailSubjectTextArea = "#xscroll > div.bubble-element.Group.baTaIbi0.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaNl1.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaNq1.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaOaX1.bubble-r-container.flex.column > input";
+	public String _emailSubjectTextArea = ".baTaSaOa1";
 	public String _emailBody = "#email_body > form > div > div.tox-editor-container > div.tox-sidebar-wrap";
 	public String _paragraphButton = "#email_body > form > div > div.tox-editor-container > div.tox-editor-header > div.tox-toolbar-overlord > div:nth-child(1) > div:nth-child(2) > button > span";
 	public String _paragraphHeading1 = "//div[@title='Heading 1']";
@@ -46,7 +46,7 @@ public class Elements {
 	public String _newestEmail = "#AQAAAAAAAQABAAAAB5MqSQAAAAA\\= > div";
 	public String __twitterShareTextArea = "#xscroll > div.bubble-element.Group.baTaIbi0.bubble-r-container.flex.column > div.bubble-element.Group.baTaIcaW0.bubble-r-container.flex.column > textarea";
 	public String __twitterMentionTagTextArea = "#xscroll > div.bubble-element.Group.baTaIbi0.bubble-r-container.flex.column > div.bubble-element.Group.baTaIcaI0.bubble-r-container.flex.column > div.bubble-element.Group.baTaIcl0.bubble-r-container.flex.row > input";
-	public String _twitterIcon = "body > div.bubble-element.Page.baTaKaTaU3.main-page.bubble-r-container.flex.column > div.bubble-element.Group.baTaKjw0.bubble-r-container.flex.column > div.bubble-element.Group.baTaMaIu2.bubble-r-container.flex.column > div.bubble-element.Group.baTaMaIw2.bubble-r-container.flex.row > div.bubble-element.Text.baTaMaIz2.clickable-element.bubble-r-vertical-center";
+	public String _twitterIcon = ".fa-twitter";
 	public String _gotoThemeTab = "#menu-item > div.clickable-element.bubble-element.Group.baTaHaXaB0.bubble-r-container.flex.row > div.bubble-element.Text.baTaHaXaD0.bubble-r-vertical-center";
 	public String _backGroundColor = "#bgpicker > div";	
 	public String _backGroundColorValue = "body > div:nth-child(46) > div.sp-picker-container > div.sp-top.sp-cf > div.sp-top-inner > div.sp-hue > div";
@@ -56,7 +56,7 @@ public class Elements {
 	public String _clickPreviewButton = "body > div.bubble-element.FloatingGroup.baTaIaFaP2.floating-group.bubble-r-container.flex.row > div.clickable-element.bubble-element.Group.baTaInaH.bubble-r-container.flex.row > div > div.clickable-element.bubble-element.Group.baTaInaE.bubble-r-container.fixed";
 	public String _flag1 = "#email_div > div.bubble-element.Group.baTaJaQg0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaQaZ0.bubble-r-container.flex.row > div.bubble-element.Group.baTnpaW10.bubble-r-container.flex.column > input";
 	public String _flag2 = "#allow_company";
-	public String _flag3 = "#inner-preview > div.bubble-element.Group.baTesaQ5.bubble-r-container.flex.column > div.bubble-element.Group.baTesl5.bubble-r-container.flex.column > button";
+	public String _flag3 = "textarea.bubble-element";
 	public String _fontColorButton= "#fontpicker > div";
 	public String _fontColorTextArea= "#g-content > div.bubble-element.Group.baTaIkaF.bubble-r-container.flex.row > div > div.bubble-element.Group.baTaIkaZ.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaGaH0.bubble-r-container.flex.row > div.bubble-element.Group.baTaJaEu0.bubble-r-container.flex.column > input";
 	public String __clickYesButton= "#save_changes_exit";
@@ -84,7 +84,7 @@ public class Elements {
 	public String _clickImageHeaderStyle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaJb0.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaJaJaB0.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.column.entry-3 > div > div.clickable-element.bubble-element.Group.baTaKpz5.bubble-r-container.flex.column > div > img";
 	public String _clickImageTopStyle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaJb0.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaJaJaB0.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.column.entry-4 > div > div.clickable-element.bubble-element.Group.baTaKpz5.bubble-r-container.flex.column > div > img";
 	public String _clickImageCenterStyle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaJb0.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaJaJaB0.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.column.entry-5 > div > div.clickable-element.bubble-element.Group.baTaKpz5.bubble-r-container.flex.column > div > img";
-	public String _clickImageBottomStyle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaJb0.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaJaJaB0.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.column.entry-6 > div > div.clickable-element.bubble-element.Group.baTaKpz5.bubble-r-container.flex.column > div > img";
+	public String _clickImageBottomStyle= "div.group-item:nth-child(6) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)";
 	public String _showNumberActionsTaken= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaMd0.bubble-r-container.flex.row > div.bubble-element.ionic-IonicToggle.clickable-element > label";
 	public String _checkingActionDetails= "//div[@class='bubble-element Group baTytaO5 bubble-r-container flex row']/div[@class='bubble-element Group baTytaN5 bubble-r-container flex row']/div/following-sibling::div";
 	public String _inputCampaignPageTitle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaKr0.bubble-r-container.flex.column > input";

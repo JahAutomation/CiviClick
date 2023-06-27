@@ -7,8 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.safari.SafariDriver;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
@@ -17,8 +16,6 @@ import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
 import CampaignSettings.Elements;
 
 public class Targets_CustomTargets_Creation {
@@ -35,8 +32,8 @@ public class Targets_CustomTargets_Creation {
 		Elements _elements = new Elements();
 		Robot robot = new Robot(); 
 				
-		//System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new SafariDriver();
+		System.setProperty(_browser._browserPath, _browser._chromeDriver);
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
 
@@ -45,25 +42,25 @@ public class Targets_CustomTargets_Creation {
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 		WebElement _email = driver.findElement
-		(By.xpath(_login._email));
+		(By.cssSelector(_login._email));
 		Thread.sleep(200);
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.xpath(_login._password));
+		(By.cssSelector(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.xpath(_login._loginButton));
+		(By.cssSelector(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(10000);
+		Thread.sleep(12000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Targets Tab..");

@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
@@ -37,7 +38,7 @@ public class DeliverySettings_VerifySendersEmailAddresses {
 		Elements _elements = new Elements();
 				
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
 
@@ -46,24 +47,24 @@ public class DeliverySettings_VerifySendersEmailAddresses {
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		WebElement _email = driver.findElement
-		(By.xpath(_login._email));
+		(By.cssSelector(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.xpath(_login._password));
+		(By.cssSelector(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.xpath(_login._loginButton));
+		(By.cssSelector(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(16000);
+		Thread.sleep(12000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(16000);
+		Thread.sleep(7000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Settings Tab..");
@@ -86,7 +87,7 @@ public class DeliverySettings_VerifySendersEmailAddresses {
 		WebElement _clickVerifySendersEmailButton = driver.findElement
 		(By.cssSelector(_elements._verifySendersEmailButton));
 		Thread.sleep(200);
-		//_clickVerifySendersEmailButton.click();
+		_clickVerifySendersEmailButton.click();
 		Thread.sleep(1300);
 								
 		WebElement _confirmationEmailLink = driver.findElement
@@ -115,7 +116,7 @@ public class DeliverySettings_VerifySendersEmailAddresses {
 		(By.cssSelector(_elements._yesButton));
 		Thread.sleep(200);
 		_clickYesButtonPopup.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 				
 		WebElement _gotoPublishTab2 = driver.findElement
 		(By.cssSelector(_campaign._gotoPublishTab));
@@ -169,7 +170,7 @@ public class DeliverySettings_VerifySendersEmailAddresses {
 					Thread.sleep(1000);
 			
 						WebElement _testTextarea1 = driver.findElement
-						(By.cssSelector(_campaign._testTextAreaRedirectAdvocates));
+						(By.cssSelector(_campaign._testTextArea1));
 						_testTextarea1.click();
 						_testTextarea1.sendKeys(_allText._test);
 						Thread.sleep(500);
@@ -230,8 +231,10 @@ public class DeliverySettings_VerifySendersEmailAddresses {
 											
 					File screenshotBot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 					try {
-			                       
-			            FileUtils.copyFile(screenshotBot, new File("C:\\CiviTestScreenshot\\VerifySendersEmail.png"));   									  
+			        	//System.out.println("=====================================================");
+						System.out.println("Taking Screenshot..");
+						System.out.println("=====================================================");         
+			            FileUtils.copyFile(screenshotBot, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/DeliverySettings/VerifySendersEmailAddress.png"));   									  
 			            Thread.sleep(2000);
 			                 	            
 			        } catch (IOException e) {

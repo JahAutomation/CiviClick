@@ -10,6 +10,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
@@ -40,7 +42,7 @@ public class SocialShareSettings_SendThankYouEmail {
 		Robot robot = new Robot(); 
 				
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
 
@@ -49,24 +51,24 @@ public class SocialShareSettings_SendThankYouEmail {
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(6000);
+		Thread.sleep(7000);
 		WebElement _email = driver.findElement
-		(By.xpath(_login._email));
+		(By.cssSelector(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.xpath(_login._password));
+		(By.cssSelector(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.xpath(_login._loginButton));
+		(By.cssSelector(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(16000);
+		Thread.sleep(12000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(17000);
+		Thread.sleep(6000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Settings Tab..");
@@ -81,7 +83,7 @@ public class SocialShareSettings_SendThankYouEmail {
 		(By.cssSelector(_elements._gotoSocialShareSettings));
 		Thread.sleep(100);
 		_gotoSocialShareSettings.click();
-		Thread.sleep(700);
+		Thread.sleep(1000);
 						
 		WebElement _clickSendThankYouEmailCheckBox = driver.findElement
 		(By.cssSelector(_elements._clickSendThankYouEmailCheckBox));
@@ -99,34 +101,24 @@ public class SocialShareSettings_SendThankYouEmail {
 				_sendFromNameTextArea.clear();
 				_sendFromNameTextArea.sendKeys(_allText._sendFromNameInput);
 				Thread.sleep(100);						
-				WebElement _sendFromEmailTextArea = driver.findElement
-						(By.cssSelector(_elements._sendFromEmailTextArea));
-						Thread.sleep(200);
-						//_sendFromEmailTextArea.click();
-//						_sendFromEmailTextArea.clear();
-//						_sendFromEmailTextArea.sendKeys(_allText._sendFromNameInput);
-						Thread.sleep(100);
 						
 						WebElement _emailSubject = driver.findElement
 								(By.cssSelector(_elements._emailSubjectTextArea));
-								Thread.sleep(200);
-								//_emailSubject.click();
-//								_emailSubject.clear();
-//								_emailSubject.sendKeys(_allText._sendFromNameInput);
+								_emailSubject.click();							
+								JavascriptExecutor var = (JavascriptExecutor) driver;
+								var.executeScript("window.scrollBy(0,300)", "");
 								Thread.sleep(1000);								
 								WebElement _emailBody = driver.findElement
 										(By.cssSelector(_elements._emailBody));
 										Thread.sleep(200);
 										_emailBody.click();		
-										 robot.keyPress(KeyEvent.VK_CONTROL);
-										 Thread.sleep(50);
-										 robot.keyPress(KeyEvent.VK_A);
-										 Thread.sleep(50);
-										 robot.keyPress(KeyEvent.VK_DELETE);
-										 Thread.sleep(50);
-										 robot.keyRelease(KeyEvent.VK_CONTROL);
-										 Thread.sleep(50);										
-										Thread.sleep(1000);
+										Thread.sleep(200);		
+										new Actions(driver)
+										.keyDown(Keys.COMMAND)
+										.sendKeys("a")
+										.keyUp(Keys.COMMAND)
+										.perform();										
+										Thread.sleep(500);
 										 robot.keyPress(KeyEvent.VK_T);
 										 Thread.sleep(100);
 										 robot.keyPress(KeyEvent.VK_E);
@@ -144,11 +136,17 @@ public class SocialShareSettings_SendThankYouEmail {
 																(By.xpath(_elements._paragraphHeading1));												
 																_clickParagraphHeading1.click();	
 																 Thread.sleep(500);
-																 robot.keyPress(KeyEvent.VK_CONTROL);
-																 Thread.sleep(50);
-																 robot.keyPress(KeyEvent.VK_A);
-																 Thread.sleep(50);
-																 robot.keyRelease(KeyEvent.VK_CONTROL);
+
+																 new Actions(driver)
+																.keyDown(Keys.COMMAND)
+																.sendKeys("a")
+																.keyUp(Keys.COMMAND)
+																.perform();	
+																//  robot.keyPress(KeyEvent.VK_CONTROL);
+																//  Thread.sleep(50);
+																//  robot.keyPress(KeyEvent.VK_A);
+																//  Thread.sleep(50);
+																//  robot.keyRelease(KeyEvent.VK_CONTROL);
 																 Thread.sleep(50);
 																WebElement _clickFontStyle = driver.findElement
 																		(By.cssSelector(_elements._fontStyle));							
@@ -272,7 +270,7 @@ public class SocialShareSettings_SendThankYouEmail {
 			Thread.sleep(1000);
 			
 			WebElement _testTextarea1 = driver.findElement
-			(By.cssSelector(_campaign._testTextAreaRedirectAdvocates));
+			(By.cssSelector(_campaign._testTextArea1));
 			_testTextarea1.click();
 			_testTextarea1.sendKeys(_allText._test);
 			Thread.sleep(500);
@@ -323,13 +321,15 @@ public class SocialShareSettings_SendThankYouEmail {
 		
 			JavascriptExecutor js4 = (JavascriptExecutor) driver;
 			js4.executeScript("window.scrollBy(0,1000)", "");
-			Thread.sleep(4000);
-			
+			Thread.sleep(6000);
+			System.out.println("=====================================================");
+			System.out.println("Clicking send mail Button..");
+			System.out.println("=====================================================");
 			WebElement _clickSendMailButton = driver.findElement
 			(By.cssSelector(_campaign._sendMailButton));
 			Thread.sleep(500);
 			_clickSendMailButton.click();
-			Thread.sleep(8000);
+			Thread.sleep(7000);
 			
 			WebElement _getSendEmailConfirmationMessage = driver.findElement
 					(By.xpath(_elements._sendEmailConfirmationMessage));
@@ -383,8 +383,8 @@ public class SocialShareSettings_SendThankYouEmail {
 														WebElement _staySignInButton = driver.findElement
 														(By.cssSelector(_elements._outlookStaySignInYesNoButton));
 														_staySignInButton.click();
-														Thread.sleep(15000);
-														robot.mouseMove(480, 300);
+														Thread.sleep(12000);
+														robot.mouseMove(480, 350);
 														robot.mousePress(KeyEvent.BUTTON1_MASK);
 														robot.delay(480); // Click one second
 														robot.mouseRelease(KeyEvent.BUTTON1_MASK);
@@ -392,23 +392,19 @@ public class SocialShareSettings_SendThankYouEmail {
 														robot.keyPress(KeyEvent.VK_ENTER);
 														Thread.sleep(50);						
 														robot.keyRelease(KeyEvent.VK_ENTER);
-														Thread.sleep(2000);	
-														
+														Thread.sleep(2000);															
 														File screenshotBot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 														try {
 															//System.out.println("=====================================================");
 															System.out.println("Taking Email Screenshot..");
 															System.out.println("=====================================================");
-												            FileUtils.copyFile(screenshotBot, new File("C:\\CiviTestScreenshot\\SendThankYouEmail.png"));   									  
+												            FileUtils.copyFile(screenshotBot, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/SocialShareSettings/SendThankYouEmail.png"));   									  
 												            Thread.sleep(2000);
 												                 	            
 												        } catch (IOException e) {
 												            System.out.println(e.getMessage());
 												        }
-														
-																
-														
-						
+																																																	
 						
 		}
 

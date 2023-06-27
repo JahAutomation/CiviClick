@@ -57,7 +57,7 @@ public class CampaignElements {
 	public String _gotoCampaignName = "#textarea";	
 	public String _makePhoneRequiredButton = "#xscroll > div.bubble-element.Group.baTaHww.bubble-r-container.flex.column > div.bubble-element.Group.baTaIaEaX2.bubble-r-container.flex.column > div.bubble-element.Group.baTaIaEa2.bubble-r-container.flex.row > div.bubble-element.ionic-IonicToggle.clickable-element > label";
 	public String _settings_SaveButton = "#save_campaign";	
-	public String _testTextArea1 = "#id-25100";
+	public String _testTextArea1 = "#id-78500";
 	public String _testTextAreaRedirectAdvocates = "#id-25100";
 	public String _testTextArea1EmailScreening = "#id-25100";	
 	public String _testTextArea2 = "#inner > div.bubble-element.Group.baTaKcd2.bubble-r-container.flex.column > div.bubble-element.Group.baTaKcu2.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaOaGaA1.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.column.entry-2 > div > select";
@@ -80,7 +80,7 @@ public class CampaignElements {
 	public String _backToDashboardYesNoButton = "#save_changes_exit";
 	public String _screeningTabButton = "#menu-item > div.bubble-element.Group.baTkkaC17.bubble-r-container.flex.row > div.bubble-element.Text.baTkkaE17.bubble-r-vertical-center.clickable-element";
 	public String _advocateEmailsTab = "#menu-item > div.clickable-element.bubble-element.Group.baTjaSm7.bubble-r-container.flex.row > div.bubble-element.Text.baTjaSn7.bubble-r-vertical-center";
-	public String _petitionTestTextArea1 = "#id-25100";	
+	public String _petitionTestTextArea1 = "#id-78500";	
 	public String _houseCheckBox = "#g-content > div.bubble-element.Group.baTaIlaW1.bubble-r-container.flex.column > div > div.bubble-element.Group.baTaJaFaK1.bubble-r-container.flex.row > div.clickable-element.bubble-element.Group.baTaJaFaL1.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaFaM1.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaNfc4.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.row.entry-1 > div > button > svg > text";	
 	public String _senateCheckBox = "#g-content > div.bubble-element.Group.baTaIlaW1.bubble-r-container.flex.column > div > div.bubble-element.Group.baTaJaFaK1.bubble-r-container.flex.row > div.clickable-element.bubble-element.Group.baTaJaFaL1.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaFaM1.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaNfc4.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.row.entry-2 > div > button > svg > text";
 	public String _republican = "#g-content > div.bubble-element.Group.baTaIlaW1.bubble-r-container.flex.column > div > div.bubble-element.Group.baTaJaFaK1.bubble-r-container.flex.row > div.clickable-element.bubble-element.Group.baTaJaFaL1.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaFaR1.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaJaFaU1.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.row.entry-1 > div > button > svg > text";

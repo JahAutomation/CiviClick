@@ -8,28 +8,16 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import com.gargoylesoftware.htmlunit.javascript.host.event.InputEvent;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
-
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
-
 import CampaignSettings.Elements;
 
 public class Display_CampaignTitleAndBody {
@@ -44,10 +32,9 @@ public class Display_CampaignTitleAndBody {
 		Browser _browser = new Browser();
 		AllTextInputs _allText = new AllTextInputs();
 		Elements _elements = new Elements();
-		Robot robot = new Robot(); 
 				
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
 
@@ -56,24 +43,24 @@ public class Display_CampaignTitleAndBody {
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(7000);
+		Thread.sleep(8000);
 		WebElement _email = driver.findElement
-		(By.xpath(_login._email));
+		(By.cssSelector(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.xpath(_login._password));
+		(By.cssSelector(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.xpath(_login._loginButton));
+		(By.cssSelector(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(17000);
+		Thread.sleep(12000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(16000);
+		Thread.sleep(6000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Display Tab..");
@@ -155,7 +142,7 @@ public class Display_CampaignTitleAndBody {
 													System.out.println("Taking Screenshot..");
 													System.out.println("=====================================================");
 												
-										            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\Display_CampaignTitleAndBody.png"));   	           
+										            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/DisplayTitleAndBody/TitleAndBody.png"));   	           
 										            Thread.sleep(2000);
 										                 	            
 										        } catch (IOException j) {

@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
@@ -35,7 +36,7 @@ public class SocialShareSettings_TwitterTextAndTag {
 	
 				
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
 
@@ -44,24 +45,24 @@ public class SocialShareSettings_TwitterTextAndTag {
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(6000);
+		Thread.sleep(7000);
 		WebElement _email = driver.findElement
-		(By.xpath(_login._email));
+		(By.cssSelector(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.xpath(_login._password));
+		(By.cssSelector(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.xpath(_login._loginButton));
+		(By.cssSelector(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(16000);
+		Thread.sleep(12000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(17000);
+		Thread.sleep(7000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Settings Tab..");
@@ -80,7 +81,7 @@ public class SocialShareSettings_TwitterTextAndTag {
 				
 		JavascriptExecutor jah1 = (JavascriptExecutor) driver;
 		jah1.executeScript("window.scrollBy(0,2000)", "");
-		
+		Thread.sleep(600);
 		WebElement __twitterShareTextArea = driver.findElement
 		(By.cssSelector(_elements.__twitterShareTextArea));
 		Thread.sleep(100);
@@ -88,7 +89,10 @@ public class SocialShareSettings_TwitterTextAndTag {
 		__twitterShareTextArea.clear();
 		__twitterShareTextArea.sendKeys(_allText._test);
 		Thread.sleep(500);
-		
+
+		JavascriptExecutor _flag1= (JavascriptExecutor) driver;
+		_flag1.executeScript("window.scrollBy(0,2000)", "");
+		Thread.sleep(600);
 		WebElement __twitterMentionTagTextArea = driver.findElement
 		(By.cssSelector(_elements.__twitterMentionTagTextArea));
 		Thread.sleep(100);
@@ -96,7 +100,9 @@ public class SocialShareSettings_TwitterTextAndTag {
 		__twitterMentionTagTextArea.clear();
 		__twitterMentionTagTextArea.sendKeys(_allText._test);
 		Thread.sleep(500);
-
+		JavascriptExecutor _flag2= (JavascriptExecutor) driver;
+		_flag2.executeScript("window.scrollBy(0,2000)", "");
+		Thread.sleep(600);
 		WebElement _settings_SaveButton = driver.findElement
 		(By.cssSelector(_campaign._settings_SaveButton));
 		_settings_SaveButton.click();
@@ -120,7 +126,7 @@ public class SocialShareSettings_TwitterTextAndTag {
 		WebElement _clickWidgetLink = driver.findElement
 		(By.cssSelector(_campaign._clickWidgetLink));
 		_clickWidgetLink.click();
-		Thread.sleep(13000);
+		Thread.sleep(10000);
 
 		//======================SWITCH TO NEW WINDOW==================================//			
 		Set <String> handles = driver.getWindowHandles();		
@@ -135,9 +141,9 @@ public class SocialShareSettings_TwitterTextAndTag {
 		//===================================================W I D G E T   N E W   T A B =====================================================//		
 		
 		if(!handles.equals(parentID)) {			
-			Thread.sleep(4000);			
+			Thread.sleep(6000);			
 			JavascriptExecutor jah2 = (JavascriptExecutor) driver;
-			jah2.executeScript("window.scrollBy(0,-2200)", "");					
+			jah2.executeScript("window.scrollBy(0,3000)", "");					
 			WebElement _clickTwitterIcon = driver.findElement
 			(By.cssSelector(_elements._twitterIcon));
 			_clickTwitterIcon.click();
@@ -158,8 +164,10 @@ public class SocialShareSettings_TwitterTextAndTag {
 			
 			File screenshotMid = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {
-	                       
-	            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\TestTwitter.png"));   	           
+	            //System.out.println("=====================================================");
+				System.out.println("Taking Email Screenshot..");
+				System.out.println("=====================================================");       
+	            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/SocialShareSettings/TwitterTextAndTags.png"));   	           
 	            Thread.sleep(2000);
 	                 	            
 	        } catch (IOException e) {

@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
@@ -37,29 +38,29 @@ public class DeliverySettings_PetitionMode {
 		Elements _elements = new Elements();
 
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
 
 		// ==============================================================
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		WebElement _email = driver.findElement
-		(By.xpath(_login._email));
+		(By.cssSelector(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.xpath(_login._password));
+		(By.cssSelector(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.xpath(_login._loginButton));
+		(By.cssSelector(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(15000);
+		Thread.sleep(14000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(17000);
+		Thread.sleep(6000);
 
 		WebElement _gotoSettingsTab = driver.findElement
 		(By.cssSelector(_campaign._gotoSettingsTab));
@@ -94,6 +95,19 @@ public class DeliverySettings_PetitionMode {
 		JavascriptExecutor jah = (JavascriptExecutor) driver;
 		jah.executeScript("window.scrollBy(0,2200)", "");
 		
+			File targets = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			try {
+				System.out.println("=====================================================");
+				System.out.println("Taking Screenshots..");
+				System.out.println("=====================================================");
+				Thread.sleep(500);		
+	            FileUtils.copyFile(targets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/DeliverySettings/PetitionTargets.png"));   									  
+	            Thread.sleep(2000);
+	                 	            
+	        } catch (IOException e) {
+	            System.out.println(e.getMessage());
+	        }
+
 		Thread.sleep(1000);
 		WebElement _clickWidgetLink = driver.findElement
 		(By.cssSelector(_campaign._clickWidgetLink));
@@ -113,7 +127,7 @@ public class DeliverySettings_PetitionMode {
 		//===================================================W I D G E T   N E W   T A B =====================================================//		
 		
 		if(!handles.equals(parentID)) {			
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 			WebElement _widgetFirstName = driver.findElement
 			(By.cssSelector(_campaign._widgetFirstname));
 			_widgetFirstName.click();
@@ -188,89 +202,75 @@ public class DeliverySettings_PetitionMode {
 			Thread.sleep(1000);			
 			WebElement _clickSendMeTextMessageCheckbox = driver.findElement
 			(By.cssSelector(_elements._sendMeTextMessageCheckbox));
-			//_clickSendMeTextMessageCheckbox.click();
+			_clickSendMeTextMessageCheckbox.click();
 			Thread.sleep(2000);
 			
 			System.out.println("=====================================================");
 			System.out.println("Checking Petition Mode..");					
 			System.out.println("=====================================================");
 			Thread.sleep(500);
-//			System.out.println("Peition mode is ON..");					
-//			System.out.println("=====================================================");
-											
+			
 			String _checkSendMailButton = driver.findElement
 			(By.cssSelector(_campaign._sendMailButton)).getAttribute("style");
-			//System.out.println(_checkSendMailButton);		
-			Thread.sleep(5000);						
-			
-			switch(_checkSendMailButton){			
-				case "background: none rgb(214, 36, 60); cursor: pointer;":
-					//System.out.println("=====================================================");
-					System.out.println("Clicking Send Email Button..");
-					System.out.println("=====================================================");	
+			System.out.println(_checkSendMailButton);		
+			Thread.sleep(5000);		
+
+			// String _sendMailStyle1 = "background: none rgb(214, 36, 60); cursor: pointer;";
+			 String _sendMailStyle2 = "background-color: rgb(144, 144, 144);";	
+			if(!_checkSendMailButton.equals(_sendMailStyle2)){
+					System.out.println("=====================================================");
 					System.out.println("Send Email Button is enabled..");
 					System.out.println("=====================================================");
+					System.out.println("Peition mode is enabled..");
+					System.out.println("=====================================================");
+					System.out.println("Clicking Send Email Button..");
+					System.out.println("=====================================================");	
+					Thread.sleep(2000);		
 					WebElement _clickSendMailButton = driver.findElement
 					(By.cssSelector(_campaign._sendMailButton));
+					Thread.sleep(1000);		
 					_clickSendMailButton.click();
 					Thread.sleep(8000);																																		
 					WebElement _getSendEmailConfirmationMessage = driver.findElement
-							(By.xpath(_elements._sendEmailConfirmationMessage));
-							Thread.sleep(1000);
-						
-								if(_getSendEmailConfirmationMessage.isDisplayed()) {
-									Thread.sleep(1000);
-									String _confirmationMessage = _getSendEmailConfirmationMessage.getText();
-									//System.out.println("=====================================================");
-									System.out.println("Email successfully sent..");
-									System.out.println("=====================================================");
-									System.out.println(_confirmationMessage);
-									System.out.println("=====================================================");
-									Thread.sleep(2000);
-									WebElement _flag2 = driver.findElement
-									(By.cssSelector(_campaign._flag2));
-									_flag2.click();
-									Thread.sleep(2000);
-								}else {
-									//System.out.println("=====================================================");
-									System.out.println("Peition mode is OFF..");
-									System.out.println("=====================================================");
-								}	
-						break;
-				
-				case "background-color: rgb(144, 144, 144);":
-					//System.out.println("=====================================================");
+					(By.xpath(_elements._sendEmailConfirmationMessage));
+					Thread.sleep(2000);		
+					System.out.println("=====================================================");
+					System.out.println(_getSendEmailConfirmationMessage.getText());
+					System.out.println("=====================================================");
+
+					File _petitonON = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+					try {
+						System.out.println("=====================================================");
+						System.out.println("Taking Screenshots..");
+						System.out.println("=====================================================");
+						Thread.sleep(500);		
+						FileUtils.copyFile(_petitonON, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/DeliverySettings/Petition_ON.png"));   									  
+						Thread.sleep(2000);
+											
+					} catch (IOException e) {
+						System.out.println(e.getMessage());
+					}
+			}else {
+					System.out.println("=====================================================");	
 					System.out.println("Send Email Button is disabled..");
 					System.out.println("=====================================================");
-					System.out.println("Peition mode is OFF..");
+					System.out.println("Peition mode is disabled..");
 					System.out.println("=====================================================");
-					Thread.sleep(4000);
-					String _getSendingToDetais_Address2 = driver.findElement
-					(By.xpath(_elements._constituentSendingToDetails_Address1)).getText();
-					Thread.sleep(1000);			
-					String _detailsAddress2 = _getSendingToDetais_Address2;					
-					//System.out.println("=====================================================");
-					System.out.println(_detailsAddress2);
-					System.out.println("=====================================================");
-					Thread.sleep(2000);		
-					
-				default:
-					 
-		            // Print statement corresponding case
+					File _petitonOFF = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+					try {
+						System.out.println("=====================================================");
+						System.out.println("Taking Screenshots..");
+						System.out.println("=====================================================");
+						Thread.sleep(500);		
+						FileUtils.copyFile(_petitonOFF, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/DeliverySettings/Petition_OFF.png"));   									  
+						Thread.sleep(2000);
+											
+					} catch (IOException e) {
+						System.out.println(e.getMessage());
+					}
 			}
-			Thread.sleep(4000);		
-			File screenshotBot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			try {
-				System.out.println("=====================================================");
-				System.out.println("Taking Screenshots..");
-				System.out.println("=====================================================");
-				Thread.sleep(500);		
-	            FileUtils.copyFile(screenshotBot, new File("C:\\CiviTestScreenshot\\Petition.png"));   									  
-	            Thread.sleep(2000);
-	                 	            
-	        } catch (IOException e) {
-	            System.out.println(e.getMessage());
-	        }
+			
+			
 																																	
 		}
 					

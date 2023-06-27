@@ -2,23 +2,24 @@ package CampaignDataCreation;
 
 public class AllTextInputs {
 
-	public String _campaignName_Value = "K01";
+	public String _campaignName_Value = "Jah7";
 	public String _pathBackgroundImage = "C:\\Users\\Jahh\\Desktop\\BackGround";
 	public String _basic_Content_WdigetTitle_TextAreaInput = "Test";
 	public String _createQ_Input = "Testing";
 	public String _widgetFirstName = "Jah";
 	public String _widgetLastName = "Savaged";
-	public String _test = " Test";
+	public String _test = "RegressionTestingMain";
+	public String _imageBackground = "demonn";
 	public String _colorCode = "#0000FF";
 	public String _colorCodeButton = "#808080";
 	public String _fontColorCode = "#FF0000";	
-	public String _email = "ai8@mvp.dev";
+	public String _email = "ao15@mvp.dev";
 	public String _address = "Cebu";
 	public String _city = "Cebu";
 	public String _state = "CA";
 	public String _ZIP = "0917";
 	public String _phone = "1234567895";
-	public String _kioskEmail = "jar+6@mvp.dev";	
+	public String _kioskEmail = "jar+003@mvp.dev";	
 	public String _constituentAddress = "Po Box 4110";
 	public String _constituentCity = "Buena Vista, Colorado(CO)";
 	public String _constituentZIP = "81211";
@@ -40,7 +41,7 @@ public class AllTextInputs {
 	public String _customCreationCity = "Cebu";
 	public String _customCreationName = "FammyT";
 	public String _customCreationPosition = "QA Tester";
-	public String _customCreationEmail = "jah+14@mvp.dev";
+	public String _customCreationEmail = "jah+15@mvp.dev";
 	public String _customCreationPhone = "1233455678";
 	
 	public String _searchCongress = "Markey";

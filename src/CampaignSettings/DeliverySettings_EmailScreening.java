@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
@@ -15,9 +16,6 @@ import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
 
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -37,7 +35,7 @@ public class DeliverySettings_EmailScreening {
 		Elements _elements = new Elements();
 				
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
 
@@ -46,24 +44,24 @@ public class DeliverySettings_EmailScreening {
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(7000);
+		Thread.sleep(8000);
 		WebElement _email = driver.findElement
-		(By.xpath(_login._email));
+		(By.cssSelector(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.xpath(_login._password));
+		(By.cssSelector(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.xpath(_login._loginButton));
+		(By.cssSelector(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(16000);
+		Thread.sleep(12000);
 
 			WebElement _clickPublishedData = driver.findElement
 			(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 			_clickPublishedData.click();
-			Thread.sleep(18000);
+			Thread.sleep(7000);
 
 				//System.out.println("=====================================================");
 				System.out.println("Navigate to Settings Tab..");
@@ -113,7 +111,7 @@ public class DeliverySettings_EmailScreening {
 												WebElement _clickWidgetLink = driver.findElement
 												(By.cssSelector(_campaign._clickWidgetLink));
 												_clickWidgetLink.click();
-												Thread.sleep(13000);
+												Thread.sleep(10000);
 
 		//======================SWITCH TO NEW WINDOW==================================//			
 		Set <String> handles = driver.getWindowHandles();		
@@ -129,7 +127,7 @@ public class DeliverySettings_EmailScreening {
 		//===================================================W I D G E T   N E W   T A B =====================================================//		
 		
 		if(!handles.equals(parentID)) {			
-			Thread.sleep(4000);
+			Thread.sleep(8000);
 			WebElement _widgetFirstName = driver.findElement
 			(By.cssSelector(_campaign._widgetFirstname));
 			_widgetFirstName.click();
@@ -150,7 +148,7 @@ public class DeliverySettings_EmailScreening {
 					Thread.sleep(1000);
 			
 						WebElement _testTextarea1 = driver.findElement
-						(By.cssSelector(_campaign._testTextArea1EmailScreening));
+						(By.cssSelector(_campaign._testTextArea1));
 						_testTextarea1.click();
 						_testTextarea1.sendKeys(_allText._test);
 						Thread.sleep(500);
@@ -210,8 +208,7 @@ public class DeliverySettings_EmailScreening {
 			Thread.sleep(9000);			
 			WebElement _getSendEmailConfirmationMessage = driver.findElement
 					(By.xpath(_elements._sendEmailConfirmationMessage));
-					Thread.sleep(1000);
-					
+					Thread.sleep(1000);				
 						if(_getSendEmailConfirmationMessage.isEnabled()) {
 							Thread.sleep(1000);
 							String _confirmationMessage = _getSendEmailConfirmationMessage.getText();
@@ -230,9 +227,7 @@ public class DeliverySettings_EmailScreening {
 								System.out.println("Please fill up the required fields..");
 								System.out.println("=====================================================");
 							}					
-			
-			
-	
+				
 		}
 		
 		driver.switchTo().window(parentID);
@@ -243,19 +238,18 @@ public class DeliverySettings_EmailScreening {
 			WebElement _clickBackToDashboardButton = driver.findElement
 					(By.cssSelector(_campaign._backToDashboardButton));
 					_clickBackToDashboardButton.click();
-					Thread.sleep(1000);
-					
+					Thread.sleep(1000);				
 					WebElement _clickYesNOButtonPopup = driver.findElement
 							(By.cssSelector(_campaign._backToDashboardYesNoButton));
 							_clickYesNOButtonPopup.click();
-							Thread.sleep(20000);
+							Thread.sleep(15000);
 							System.out.println("=====================================================");
 							System.out.println("Navigate Screening Tab..");
 							System.out.println("=====================================================");	
 							WebElement _clickScreeningTab = driver.findElement
 									(By.cssSelector(_campaign._screeningTabButton));
 									_clickScreeningTab.click();
-									Thread.sleep(8000);
+									Thread.sleep(5000);
 									System.out.println("=====================================================");
 									System.out.println("Navigate Advocates Email Tab..");
 									System.out.println("=====================================================");
@@ -265,14 +259,14 @@ public class DeliverySettings_EmailScreening {
 									WebElement _clickAdvocateEmailsTab = driver.findElement
 											(By.cssSelector(_campaign._advocateEmailsTab));
 											_clickAdvocateEmailsTab.click();
-											Thread.sleep(10000);
+											Thread.sleep(3000);
 											System.out.println("=====================================================");
 											System.out.println("Taking Emails Screenshots..");
 											System.out.println("=====================================================");
 											File screenshotBot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 											try {
 									                       
-									            FileUtils.copyFile(screenshotBot, new File("C:\\CiviTestScreenshot\\EmailScreening.png"));   									  
+									            FileUtils.copyFile(screenshotBot, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/DeliverySettings/EmailScreening.png"));   									  
 									            Thread.sleep(2000);
 									                 	            
 									        } catch (IOException e) {
