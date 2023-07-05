@@ -8,12 +8,16 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
+
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -34,29 +38,29 @@ public class DeliverySettings_ConstituentMailOnly {
 		//Robot robot = new Robot();
 
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(_browser._browserLive);
+		driver.get(_browser._browser);
 
 		// ==============================================================
-		Thread.sleep(8000);
+		Thread.sleep(4000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
 		Thread.sleep(15000);
 
 			WebElement _clickPublishedData = driver.findElement
-			(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
+			(By.cssSelector(_campaign._clickDataPublishedStatusEditButton));
 			_clickPublishedData.click();
-			Thread.sleep(6000);
+			Thread.sleep(17000);
 
 				WebElement _gotoSettingsTab = driver.findElement
 				(By.cssSelector(_campaign._gotoSettingsTab));
@@ -73,7 +77,7 @@ public class DeliverySettings_ConstituentMailOnly {
 						WebElement _clickConstituentMailOnlyButton = driver.findElement
 						(By.cssSelector(_elements._clickConstituentMailOnlyButton));
 						Thread.sleep(200);
-						//_clickConstituentMailOnlyButton.click();
+						_clickConstituentMailOnlyButton.click();
 						Thread.sleep(1000);
 													
 							WebElement _settings_SaveButton = driver.findElement
@@ -89,7 +93,7 @@ public class DeliverySettings_ConstituentMailOnly {
 								JavascriptExecutor jah = (JavascriptExecutor) driver;
 								jah.executeScript("window.scrollBy(0,2200)", "");
 		
-								Thread.sleep(4000);
+								Thread.sleep(1000);
 								WebElement _clickWidgetLink = driver.findElement
 								(By.cssSelector(_campaign._clickWidgetLink));
 								_clickWidgetLink.click();
@@ -108,7 +112,7 @@ public class DeliverySettings_ConstituentMailOnly {
 		//===================================================W I D G E T   N E W   T A B =====================================================//		
 		
 		if(!handles.equals(parentID)) {			
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			WebElement _widgetFirstName = driver.findElement
 			(By.cssSelector(_campaign._widgetFirstname));
 			_widgetFirstName.click();
@@ -135,7 +139,7 @@ public class DeliverySettings_ConstituentMailOnly {
 						Thread.sleep(500);
 			
 							WebElement _testTextarea2 = driver.findElement
-							(By.cssSelector(_campaign._testTextArea2)); 
+							(By.cssSelector(_campaign._testTextArea2));
 							_testTextarea2.click();
 							Thread.sleep(500);
 			
@@ -183,7 +187,9 @@ public class DeliverySettings_ConstituentMailOnly {
 			System.out.println("=====================================================");
 			
 			JavascriptExecutor js4 = (JavascriptExecutor) driver;
-			js4.executeScript("window.scrollBy(0,1000)", "");							
+			js4.executeScript("window.scrollBy(0,1000)", "");
+			
+						
 			Thread.sleep(1000);			
 			WebElement _clickSendMeTextMessageCheckbox = driver.findElement
 			(By.cssSelector(_elements._sendMeTextMessageCheckbox));
@@ -262,7 +268,7 @@ public class DeliverySettings_ConstituentMailOnly {
 						System.out.println("Taking Screenshot..");
 						System.out.println("=====================================================");
 					
-			            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/DeliverySettings/ConstintuentEmailOnly.png"));   	           
+			            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\ConstituentMailOnly.png"));   	           
 			            Thread.sleep(2000);
 			                 	            
 			        } catch (IOException j) {

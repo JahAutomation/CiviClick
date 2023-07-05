@@ -6,8 +6,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
@@ -15,6 +16,8 @@ import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
 import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import CampaignSettings.Elements;
 
 public class TargetsStates_Senate {
@@ -31,8 +34,8 @@ public class TargetsStates_Senate {
 		Elements _elements = new Elements();
 		Robot robot = new Robot(); 
 				
-		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new FirefoxDriver();
+		//System.setProperty(_browser._browserPath, _browser._chromeDriver);
+		WebDriver driver = new SafariDriver();
 		driver.manage().window().maximize();
 		driver.get(_browser._browser);
 
@@ -43,23 +46,23 @@ public class TargetsStates_Senate {
 
 		Thread.sleep(7000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		Thread.sleep(200);
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(12000);
+		Thread.sleep(10000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Targets Tab..");
@@ -80,7 +83,7 @@ public class TargetsStates_Senate {
 								System.out.println("Taking Screenshot - Targets Congress Page..");
 								System.out.println("=====================================================");	
 								Thread.sleep(3000);					
-								FileUtils.copyFile(_congressMainPage, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/Targets/StatesSenate/Senate_CongressMainPage.png"));   	           
+								FileUtils.copyFile(_congressMainPage, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/State_Senate/Senate_CongressMainPage.png"));   	           
 								Thread.sleep(2000);												
 							} catch (IOException e) {
 								System.out.println(e.getMessage());
@@ -121,7 +124,7 @@ public class TargetsStates_Senate {
 								System.out.println("Taking Screenshot - Targets States Page..");
 								System.out.println("=====================================================");	
 								Thread.sleep(3000);					
-								FileUtils.copyFile(_statesPage, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/Targets/StatesSenate/Senate_StatesPage.png"));   	           
+								FileUtils.copyFile(_statesPage, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/State_Senate/Senate_StatesPage.png"));   	           
 								Thread.sleep(2000);												
 							} catch (IOException e) {
 								System.out.println(e.getMessage());
@@ -168,8 +171,8 @@ public class TargetsStates_Senate {
 													//System.out.println("=====================================================");
 													System.out.println("Taking Screenshot - Selected All Targets..");
 													System.out.println("=====================================================");	
-													Thread.sleep(6500);					
-													FileUtils.copyFile(_state, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/Targets/StatesSenate/Senate_State_SelectedTargets.png"));   	           
+													Thread.sleep(4500);					
+													FileUtils.copyFile(_state, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/State_Senate/Senate_State_SelectedTargets.png"));   	           
 													Thread.sleep(2000);												
 												} catch (IOException e) {
 													System.out.println(e.getMessage());
@@ -190,7 +193,7 @@ public class TargetsStates_Senate {
 																	System.out.println("Taking Screenshot - ViewAdded Targets..");
 																	System.out.println("=====================================================");	
 																	Thread.sleep(4000);					
-																	FileUtils.copyFile(_addedTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/Targets/StatesSenate/Senate_StateView_AddedTargets.png"));   	           
+																	FileUtils.copyFile(_addedTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/State_Senate/Senate_StateView_AddedTargets.png"));   	           
 																	Thread.sleep(2000);												
 																} catch (IOException e) {
 																	System.out.println(e.getMessage());
@@ -211,14 +214,14 @@ public class TargetsStates_Senate {
 																	(By.cssSelector(_elements._removeALLButton));
 																	Thread.sleep(1000);
 																	_clickRemoveALLButton.click();										
-																	Thread.sleep(22000);
+																	Thread.sleep(25000);
 																	File _removeAllTargets = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 																				try {
 																					//System.out.println("=====================================================");
 																					System.out.println("Taking Screenshot - Remove All Targets..");
 																					System.out.println("=====================================================");	
 																					Thread.sleep(1000);					
-																					FileUtils.copyFile(_removeAllTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/Targets/StatesSenate/Senate_State_RemoveAllTargets.png"));   	           
+																					FileUtils.copyFile(_removeAllTargets, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/State_Senate/Senate_State_RemoveAllTargets.png"));   	           
 																					Thread.sleep(500);												
 																				} catch (IOException e) {
 																					System.out.println(e.getMessage());

@@ -9,18 +9,28 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.gargoylesoftware.htmlunit.javascript.host.event.InputEvent;
+
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
+
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
+
 import CampaignSettings.Elements;
 
 public class Display_ShowNumberOfActionsTaken {
@@ -32,38 +42,39 @@ public class Display_ShowNumberOfActionsTaken {
 		// AccountDetails account = new AccountDetails();
 		CampaignElements _campaign = new CampaignElements();
 		LoginElements _login = new LoginElements();
-		Browser _browser = new Browser();		
+		Browser _browser = new Browser();
+		AllTextInputs _allText = new AllTextInputs();
 		Elements _elements = new Elements();
-		
+		Robot robot = new Robot(); 
 				
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(_browser._browserLive);
+		driver.get(_browser._browser);
 
 		// ==============================================================
 		System.out.println("=====================================================");
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(8000);
+		Thread.sleep(7000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(12000);
+		Thread.sleep(17000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(6500);
+		Thread.sleep(16000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Display Tab..");
@@ -132,12 +143,12 @@ public class Display_ShowNumberOfActionsTaken {
 															//System.out.println("=====================================================");
 															System.out.println(_checkingActionDetails);
 															System.out.println("=====================================================");
-															Thread.sleep(7000);	
+															Thread.sleep(13000);	
 													}catch(NoSuchElementException e) {
 														//System.out.println("=====================================================");
 														System.out.println("ShowNumberOfActionsTaken Button is disabled..");
 														System.out.println("=====================================================");
-													 
+													
 													}
 													
 												}
@@ -147,7 +158,7 @@ public class Display_ShowNumberOfActionsTaken {
 													System.out.println("Taking Screenshot..");
 													System.out.println("=====================================================");
 												
-										            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/DisplayShowActionTakenNumbers/ActionsTaken.png"));   	           
+										            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\Display_NumberOfActionsTaken.png"));   	           
 										            Thread.sleep(2000);
 										                 	            
 										        } catch (IOException j) {

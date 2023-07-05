@@ -8,13 +8,16 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
+
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -35,24 +38,24 @@ public class FormSettingsPhoneRequired {
 		Elements _elements = new Elements();
 
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(_browser._browserLive);
+		driver.get(_browser._browser);
 
 		// ============================================================== L O G I N
-		Thread.sleep(7000);
+		Thread.sleep(6000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(12000);
+		Thread.sleep(15000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
@@ -185,9 +188,11 @@ public class FormSettingsPhoneRequired {
 			try {
 				System.out.println("=====================================================");
 				System.out.println("Taking Screenshot..");
-				System.out.println("=====================================================");			
-	            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/FormSettings/PhoneRequired1.png"));   	           
-	            Thread.sleep(2000);                 	            
+				System.out.println("=====================================================");
+			
+	            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\Phone Required.png"));   	           
+	            Thread.sleep(2000);
+	                 	            
 	        } catch (IOException j) {
 	            System.out.println(j.getMessage());
 	        }
@@ -201,25 +206,15 @@ public class FormSettingsPhoneRequired {
 					System.out.println("Phone is Required. Please fill in your phone number..");
 					System.out.println("=====================================================");
 					Thread.sleep(2000);
-							WebElement _flag2 = driver.findElement
-							(By.cssSelector(_campaign._flag2));
-							_flag2.click();
-							Thread.sleep(2000);				
-							File _phoneArea = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-								try {
-									System.out.println("=====================================================");
-									System.out.println("Taking Screenshot..");
-									System.out.println("=====================================================");			
-									FileUtils.copyFile(_phoneArea, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/FormSettings/PhoneRequired2.png"));   	           
-									Thread.sleep(2000);                 	            
-								} catch (IOException j) {
-									System.out.println(j.getMessage());
-								}	
-				}else {
-					System.out.println("=====================================================");
-					System.out.println("Email Successfully Submitted..");
-					System.out.println("=====================================================");
-				}						
+					WebElement _flag2 = driver.findElement
+					(By.cssSelector(_campaign._flag2));
+					_flag2.click();
+					Thread.sleep(2000);					
+					}else {
+						System.out.println("=====================================================");
+						System.out.println("Email Successfully Submitted..");
+						System.out.println("=====================================================");
+					}						
 			
 		}
 		

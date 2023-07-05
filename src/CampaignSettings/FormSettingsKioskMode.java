@@ -11,11 +11,12 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.io.File;
@@ -41,35 +42,35 @@ public class FormSettingsKioskMode {
 		ScreenShotTestCompare_Bot screenShotBot = new ScreenShotTestCompare_Bot();
 		
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(_browser._browserLive);
+		driver.get(_browser._browser);
 
 		// ============================================================== L O G I N
 		System.out.println("=====================================================");
 		System.out.println("          K I O S K   M O D E   O N / O F F ");
 		System.out.println("=====================================================");
-		Thread.sleep(7000);
+		Thread.sleep(6000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(12000);
+		Thread.sleep(17000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
 		Thread.sleep(5000);
 
-		// robot.mouseMove(65, 330);
-		// Thread.sleep(10000);
+		robot.mouseMove(65, 330);
+		Thread.sleep(10000);
 
 		WebElement _gotoSettingsTab = driver.findElement
 		(By.cssSelector(_campaign._gotoSettingsTab));
@@ -88,7 +89,7 @@ public class FormSettingsKioskMode {
 		WebElement _settings_SaveButton = driver.findElement
 		(By.cssSelector(_campaign._settings_SaveButton));
 		_settings_SaveButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 				
 		JavascriptExecutor js4 = (JavascriptExecutor) driver;
 		js4.executeScript("window.scrollBy(0,-1400)", "");		
@@ -242,11 +243,9 @@ public class FormSettingsKioskMode {
 							System.out.println("=====================================================");
 							 Thread.sleep(2000);
 							File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
-							try {			                  
-								//System.out.println("=====================================================");
-								System.out.println("Taking Screenshot..");
-								System.out.println("=====================================================");      
-								FileUtils.copyFile(screenshot, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/FormSettings/KioskScreenshot1.png"));   
+							try {
+					                       
+								FileUtils.copyFile(screenshot, new File("C:\\CiviTestScreenshot\\ActualImage.png"));   
 					            //screenShot.main(args);
 					            Thread.sleep(2000);
 					                 	            
@@ -254,23 +253,23 @@ public class FormSettingsKioskMode {
 					            System.out.println(e.getMessage());
 					        }
 				
-									// Thread.sleep(4000);
-									// JavascriptExecutor jah2 = (JavascriptExecutor) driver;
-									// jah2.executeScript("window.scrollBy(0,2400)", "");
-									// WebElement _flag3 = driver.findElement
-									// (By.cssSelector(_campaign._emailTextArea));
-									// _flag3.click();
-									// Thread.sleep(2000);
-									// File screenshotMid = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-									// try {
+									Thread.sleep(4000);
+									JavascriptExecutor jah2 = (JavascriptExecutor) driver;
+									jah2.executeScript("window.scrollBy(0,2400)", "");
+									WebElement _flag3 = driver.findElement
+									(By.cssSelector(_campaign._emailTextArea));
+									_flag3.click();
+									Thread.sleep(2000);
+									File screenshotMid = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+									try {
 							                       
-							        //     FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\MidScreenshot_ActualImage.png"));   
-							        //     //screenShotMid.main(args);
-							        //     Thread.sleep(2000);
+							            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\MidScreenshot_ActualImage.png"));   
+							            //screenShotMid.main(args);
+							            Thread.sleep(2000);
 							                 	            
-							        // } catch (IOException e) {
-							        //     System.out.println(e.getMessage());
-							        // }
+							        } catch (IOException e) {
+							            System.out.println(e.getMessage());
+							        }
 				
 											Thread.sleep(4000);
 											JavascriptExecutor jah3 = (JavascriptExecutor) driver;
@@ -281,10 +280,8 @@ public class FormSettingsKioskMode {
 											Thread.sleep(2000);
 											File screenshotBot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 											try {
-									        	 //System.out.println("=====================================================");
-												System.out.println("Taking Screenshot..");
-												System.out.println("=====================================================");             
-									            FileUtils.copyFile(screenshotBot, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/FormSettings/KioskScreenshot2.png"));   
+									                       
+									            FileUtils.copyFile(screenshotBot, new File("C:\\CiviTestScreenshot\\BotScreenshot_ActualImage.png"));   
 									            //screenShotBot.main(args);
 									            Thread.sleep(2000);
 									                 	            

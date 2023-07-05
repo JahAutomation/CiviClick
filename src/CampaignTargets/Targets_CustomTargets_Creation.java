@@ -6,8 +6,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
@@ -16,6 +17,8 @@ import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
 import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import CampaignSettings.Elements;
 
 public class Targets_CustomTargets_Creation {
@@ -32,35 +35,35 @@ public class Targets_CustomTargets_Creation {
 		Elements _elements = new Elements();
 		Robot robot = new Robot(); 
 				
-		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new FirefoxDriver();
+		//System.setProperty(_browser._browserPath, _browser._chromeDriver);
+		WebDriver driver = new SafariDriver();
 		driver.manage().window().maximize();
-		driver.get(_browser._browserLive);
+		driver.get(_browser._browser);
 
 		// ==============================================================
 		System.out.println("=====================================================");
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(7000);
+		Thread.sleep(4000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		Thread.sleep(200);
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(12000);
+		Thread.sleep(10000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Targets Tab..");
@@ -81,7 +84,7 @@ public class Targets_CustomTargets_Creation {
 								System.out.println("Taking Screenshot - Targets Congress Page..");
 								System.out.println("=====================================================");	
 								Thread.sleep(3000);					
-								FileUtils.copyFile(_congressMainPage, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/CustomTargets_Creation/CongressMainPage.png"));   	           
+								FileUtils.copyFile(_congressMainPage, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/CustomTargets_Creation/CongressMainPage.png"));   	           
 								Thread.sleep(2000);												
 							} catch (IOException e) {
 								System.out.println(e.getMessage());
@@ -110,7 +113,7 @@ public class Targets_CustomTargets_Creation {
 				System.out.println("=====================================================");
 				WebElement _clickCreate = driver.findElement
 				(By.cssSelector(_elements._createButton));
-				Thread.sleep(500);
+				Thread.sleep(1000);
 				_clickCreate.click();
 				Thread.sleep(2000);
 
@@ -120,7 +123,7 @@ public class Targets_CustomTargets_Creation {
 								System.out.println("Taking Screeshot - Fill up all fields Area..");
 								System.out.println("=====================================================");	
 								Thread.sleep(3000);					
-								FileUtils.copyFile(jah, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/CustomTargets_Creation/Fill_Up_Area.png"));   	           
+								FileUtils.copyFile(jah, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/CustomTargets_Creation/Fill_Up_Area.png"));   	           
 								Thread.sleep(2000);												
 							} catch (IOException e) {
 								System.out.println(e.getMessage());
@@ -134,7 +137,7 @@ public class Targets_CustomTargets_Creation {
 
 				WebElement _city = driver.findElement
 				(By.cssSelector(_elements._creationCity));
-				Thread.sleep(500);
+				Thread.sleep(1000);
 				_city.click();
 				_city.clear();
 				_city.sendKeys(_allText._customCreationCity);
@@ -190,7 +193,7 @@ public class Targets_CustomTargets_Creation {
 								System.out.println("Taking Screenshot Contact Created..");
 								System.out.println("=====================================================");	
 								Thread.sleep(3000);					
-								FileUtils.copyFile(jah1, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/CustomTargets_Creation/ContactsCreated.png"));   	           
+								FileUtils.copyFile(jah1, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/CustomTargets_Creation/ContactsCreated.png"));   	           
 								Thread.sleep(2000);												
 							} catch (IOException e) {
 								System.out.println(e.getMessage());

@@ -8,19 +8,28 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.gargoylesoftware.htmlunit.javascript.host.event.InputEvent;
+
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
+
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
+
 import CampaignSettings.Elements;
 
 public class Display_ImageBackgroud_Style {
@@ -35,36 +44,36 @@ public class Display_ImageBackgroud_Style {
 		Browser _browser = new Browser();
 		AllTextInputs _allText = new AllTextInputs();
 		Elements _elements = new Elements();
-		 Robot robot = new Robot(); 
+		Robot robot = new Robot(); 
 				
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(_browser._browserLive);
+		driver.get(_browser._browser);
 
 		// ==============================================================
 		System.out.println("=====================================================");
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(8000);
+		Thread.sleep(7000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(12000);
+		Thread.sleep(17000);
 
 		WebElement _clickPublishedData = driver.findElement
 		(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(6000);
+		Thread.sleep(16000);
 
 		//System.out.println("=====================================================");
 		System.out.println("Navigate to Display Tab..");
@@ -96,65 +105,49 @@ public class Display_ImageBackgroud_Style {
 						_clickBrowseButton.click();
 						Thread.sleep(1500);
 						
-						//System.out.println("=====================================================");
-								System.out.println("Upload Background picture..");
-								System.out.println("=====================================================");								
-								robot.keyPress(KeyEvent.VK_TAB);
-								Thread.sleep(100);
-								robot.keyRelease(KeyEvent.VK_TAB);
-								Thread.sleep(100);						
-														
-						robot.keyPress(KeyEvent.VK_D);
+						robot.keyPress(KeyEvent.VK_TAB);
 						Thread.sleep(50);
-						robot.keyRelease(KeyEvent.VK_D);
+						robot.keyPress(KeyEvent.VK_TAB);
 						Thread.sleep(50);
-
-								robot.keyPress(KeyEvent.VK_E);
-								Thread.sleep(50);
-								robot.keyRelease(KeyEvent.VK_E);
-								Thread.sleep(50);
-
-						robot.keyPress(KeyEvent.VK_M);
+						robot.keyPress(KeyEvent.VK_TAB);
 						Thread.sleep(50);
-						robot.keyRelease(KeyEvent.VK_M);
+						robot.keyPress(KeyEvent.VK_TAB);
 						Thread.sleep(50);
-
-								robot.keyPress(KeyEvent.VK_O);
-								Thread.sleep(50);
-								robot.keyRelease(KeyEvent.VK_O);
-								Thread.sleep(50);
-
-						robot.keyPress(KeyEvent.VK_N);
+						robot.keyPress(KeyEvent.VK_TAB);
 						Thread.sleep(50);
-						robot.keyRelease(KeyEvent.VK_N);
+						robot.keyPress(KeyEvent.VK_ENTER);
+						Thread.sleep(50);						
+						robot.keyRelease(KeyEvent.VK_ENTER);
 						Thread.sleep(50);
-
-								robot.keyPress(KeyEvent.VK_ENTER);
-								Thread.sleep(50);
-								robot.keyRelease(KeyEvent.VK_ENTER);
-								Thread.sleep(1000);
-								//System.out.println("=========================================================");
-								System.out.println("Mouse move to Background pciture and Click to Upload..");
-								System.out.println("=======================================================");	
-								robot.mouseMove(770, 360);
-								robot.mousePress(KeyEvent.BUTTON1_MASK); 
-								robot.delay(1000);
-								robot.mousePress(KeyEvent.BUTTON1_MASK); 
-								robot.delay(1000);
-								robot.mouseRelease(KeyEvent.BUTTON1_MASK);
-								robot.delay(1000);
-								robot.mouseRelease(KeyEvent.BUTTON1_MASK);
-								robot.delay(4000);
-
-								robot.keyPress(KeyEvent.VK_ENTER);
-								Thread.sleep(2000);		
-								
+																		
+						StringSelection stringSelection = new StringSelection(_allText._pathBackgroundImage);
+						Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+						clipboard.setContents(stringSelection, stringSelection);
+						Thread.sleep(300);
+						
+						robot.keyPress(KeyEvent.VK_CONTROL);
+						robot.keyPress(KeyEvent.VK_V);
+						robot.keyRelease(KeyEvent.VK_V);
+						robot.keyRelease(KeyEvent.VK_CONTROL);
+						robot.keyPress(KeyEvent.VK_ENTER);
+						Thread.sleep(50);						
+						robot.keyRelease(KeyEvent.VK_ENTER);
+						Thread.sleep(1000);		
+						
+						robot.mouseMove(210, 210);
+						robot.mousePress(KeyEvent.BUTTON1_MASK);
+						robot.delay(500); // Click one second
+						robot.mouseRelease(KeyEvent.BUTTON1_MASK);
+						robot.keyPress(KeyEvent.VK_ENTER);
+						Thread.sleep(50);						
+						robot.keyRelease(KeyEvent.VK_ENTER);
+						Thread.sleep(3200);							
 												
 						WebElement _clickUploadButton = driver.findElement
 						(By.cssSelector(_elements._uploadButton));
 						Thread.sleep(50);
 						_clickUploadButton.click();
-						Thread.sleep(2000);
+						Thread.sleep(1500);
 						
 						JavascriptExecutor jah2 = (JavascriptExecutor) driver;
 						jah2.executeScript("window.scrollBy(0,-500)", "");
@@ -166,18 +159,16 @@ public class Display_ImageBackgroud_Style {
 						(By.cssSelector(_elements._searchTextArea));
 						Thread.sleep(50);
 						_searchBackgroundTextBox.click();
-						_searchBackgroundTextBox.sendKeys(_allText._imageBackground);
+						_searchBackgroundTextBox.sendKeys(_allText._test);
 						Thread.sleep(1500);
-						JavascriptExecutor jah3 = (JavascriptExecutor) driver;
-						jah3.executeScript("window.scrollBy(0,700)", "");
-
-						robot.mouseMove(480, 600);
+						
+						robot.mouseMove(480, 650);
 						robot.mousePress(KeyEvent.BUTTON1_MASK);
 						robot.delay(500); // Click one second
 						robot.mouseRelease(KeyEvent.BUTTON1_MASK);
 						
-						JavascriptExecutor jah4 = (JavascriptExecutor) driver;
-						jah4.executeScript("window.scrollBy(0,-500)", "");
+						JavascriptExecutor jah3 = (JavascriptExecutor) driver;
+						jah3.executeScript("window.scrollBy(0,-500)", "");
 						//System.out.println("=====================================================");
 						System.out.println("Set Background Style..");
 						System.out.println("=====================================================");
@@ -194,8 +185,8 @@ public class Display_ImageBackgroud_Style {
 								_clickSaveButton.click();
 								Thread.sleep(4000);	
 								
-								JavascriptExecutor var = (JavascriptExecutor) driver;
-								var.executeScript("window.scrollBy(0,-500)", "");
+								JavascriptExecutor jah4 = (JavascriptExecutor) driver;
+								jah4.executeScript("window.scrollBy(0,-500)", "");
 								Thread.sleep(500);	
 																			
 										//System.out.println("=====================================================");
@@ -222,7 +213,7 @@ public class Display_ImageBackgroud_Style {
 													System.out.println("Taking Screenshot..");
 													System.out.println("=====================================================");
 												
-										            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/DisplayImageBackground/ImageBackground.png"));   	           
+										            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\Display_ImageBackGroundStyle1.png"));   	           
 										            Thread.sleep(2000);
 										                 	            
 										        } catch (IOException j) {

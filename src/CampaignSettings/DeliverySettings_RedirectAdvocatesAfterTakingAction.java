@@ -8,12 +8,16 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 import CampaignDataCreation.AllTextInputs;
 import CampaignDataCreation.Browser;
 import CampaignDataCreation.CampaignElements;
 import CampaignDataCreation.LoginElements;
+
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -33,46 +37,44 @@ public class DeliverySettings_RedirectAdvocatesAfterTakingAction {
 		Elements _elements = new Elements();
 				
 		System.setProperty(_browser._browserPath, _browser._chromeDriver);
-		WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(_browser._browserLive);
+		driver.get(_browser._browser);
 
 		// ==============================================================
 		System.out.println("=====================================================");
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		Thread.sleep(100);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(12000);
+		Thread.sleep(16000);
 	
 		WebElement _clickPublishedData = driver
-		.findElement(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
+				.findElement(By.cssSelector(_campaign._petition_ClickDataPublishedStatusEditButton));
 		_clickPublishedData.click();
-		Thread.sleep(7000);
+		Thread.sleep(17000);
 
 		// System.out.println("=====================================================");
 		System.out.println("Navigate to Settings Tab..");
 		System.out.println("=====================================================");
-		WebElement _gotoSettingsTab = driver.findElement
-		(By.cssSelector(_campaign._gotoSettingsTab));
+		WebElement _gotoSettingsTab = driver.findElement(By.cssSelector(_campaign._gotoSettingsTab));
 		Thread.sleep(1000);
 		_gotoSettingsTab.click();
 		// Thread.sleep(300);
 
-		WebElement _gotoDeliverySettingsTab = driver.findElement
-		(By.cssSelector(_elements._gotoDeliverySettingsTab));
+		WebElement _gotoDeliverySettingsTab = driver.findElement(By.cssSelector(_elements._gotoDeliverySettingsTab));
 		Thread.sleep(100);
 		_gotoDeliverySettingsTab.click();
 		Thread.sleep(700);
@@ -81,21 +83,19 @@ public class DeliverySettings_RedirectAdvocatesAfterTakingAction {
 		js3.executeScript("window.scrollBy(0,450)", "");
 
 		WebElement _clickRedirectAdvocatesButton = driver
-		.findElement(By.cssSelector(_elements._redirectAdvocatesButton));
+				.findElement(By.cssSelector(_elements._redirectAdvocatesButton));
 		Thread.sleep(200);
 		_clickRedirectAdvocatesButton.click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
-		WebElement _redirectLink = driver.findElement
-		(By.cssSelector(_elements._redirectAdvocatesLinkTextArea));
+		WebElement _redirectLink = driver.findElement(By.cssSelector(_elements._redirectAdvocatesLinkTextArea));
 		Thread.sleep(200);
 		_redirectLink.click();
 		_redirectLink.clear();
 		_redirectLink.sendKeys(_allText._redirectLink);
 		Thread.sleep(1000);
 
-		WebElement _settings_SaveButton = driver.findElement
-		(By.cssSelector(_campaign._settings_SaveButton));
+		WebElement _settings_SaveButton = driver.findElement(By.cssSelector(_campaign._settings_SaveButton));
 		_settings_SaveButton.click();
 		Thread.sleep(8000);
 
@@ -103,8 +103,7 @@ public class DeliverySettings_RedirectAdvocatesAfterTakingAction {
 		System.out.println("Navigate to Publish Tab..");
 		System.out.println("=====================================================");
 
-		WebElement _gotoPublishTab = driver.findElement
-		(By.cssSelector(_campaign._gotoPublishTab));
+		WebElement _gotoPublishTab = driver.findElement(By.cssSelector(_campaign._gotoPublishTab));
 		_gotoPublishTab.click();
 		Thread.sleep(1000);
 
@@ -134,7 +133,7 @@ public class DeliverySettings_RedirectAdvocatesAfterTakingAction {
 		//===================================================W I D G E T   N E W   T A B =====================================================//		
 		
 		if(!handles.equals(parentID)) {			
-			Thread.sleep(6000);
+			Thread.sleep(4000);
 			WebElement _widgetFirstName = driver.findElement
 			(By.cssSelector(_campaign._widgetFirstname));
 			_widgetFirstName.click();
@@ -155,7 +154,7 @@ public class DeliverySettings_RedirectAdvocatesAfterTakingAction {
 					Thread.sleep(1000);
 			
 						WebElement _testTextarea1 = driver.findElement
-						(By.cssSelector(_campaign._testTextArea1));
+						(By.cssSelector(_campaign._testTextAreaRedirectAdvocates));
 						_testTextarea1.click();
 						_testTextarea1.sendKeys(_allText._test);
 						Thread.sleep(500);
@@ -234,7 +233,7 @@ public class DeliverySettings_RedirectAdvocatesAfterTakingAction {
 				}	
 						
 			}
-			Thread.sleep(12000);
+			Thread.sleep(13000);
 						
 		Set <String> handles2 = driver.getWindowHandles();		
 		Iterator<String> it2 = handles2.iterator();		
@@ -247,13 +246,14 @@ public class DeliverySettings_RedirectAdvocatesAfterTakingAction {
 		driver.switchTo().window(subChildID);
 		
 		if(!handles2.equals(parentID2)) {	
-			if(!handles2.equals(childID2)) {			
+			if(!handles2.equals(childID2)) {	
+			
 			File screenshotMid = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {
 				//System.out.println("=====================================================");
 				System.out.println("Taking Screenshot..");
 				System.out.println("=====================================================");
-	            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/DeliverySettings/RadioAdvcatesDirectLink.png"));   	           
+	            FileUtils.copyFile(screenshotMid, new File("C:\\CiviTestScreenshot\\RedirectAdvocatesLink.png"));   	           
 	            Thread.sleep(2000);
 	                 	            
 	        } catch (IOException e) {

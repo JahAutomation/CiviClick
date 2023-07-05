@@ -1,20 +1,20 @@
 package CampaignDataCreation;
 
-import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot; 
 public class CampaginDataCreation {
 
-	public static void main(String args[]) throws InterruptedException, AWTException {
+	public static void main(String args[]) throws InterruptedException {
 		
 		//======================================================================================================================//		
 		// AccountDetails account = new AccountDetails();
@@ -22,54 +22,43 @@ public class CampaginDataCreation {
 		CampaignElements _campaign = new CampaignElements();
 		AllTextInputs _allTextInputs = new AllTextInputs();
 		Browser _browser = new Browser();
-		//Robot robot = new Robot(); 
 
-		System.setProperty(_browser._browserPath, _browser._chromeDriver);			
-		WebDriver driver = new FirefoxDriver();
-		//WebDriver driver = new SafariDriver();
+		// System.setProperty(_browser._browserPath, _browser._chromeDriver);			
+		// WebDriver driver = new ChromeDriver();
+		WebDriver driver = new SafariDriver();
 		driver.manage().window().maximize();
-		driver.get(_browser._browserLive);
+		driver.get(_browser._browser);
 		String _var1 = "";
 		// ==============================================================
 		System.out.println("=====================================================");
 		System.out.println("Log In..");
 		System.out.println("=====================================================");
 		//============================================================== L O G I N =================================================//
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		WebElement _email = driver.findElement
-		(By.cssSelector(_login._email));
+		(By.xpath(_login._email));
 		_email.click();
 		_email.sendKeys(_login._emailAccount);
 		WebElement _password = driver.findElement
-		(By.cssSelector(_login._password));
+		(By.xpath(_login._password));
 		_password.click();
 		_password.sendKeys(_login._passwordAccount);
 		WebElement _loginButton = driver.findElement
-		(By.cssSelector(_login._loginButton));
+		(By.xpath(_login._loginButton));
 		_loginButton.click();
-		Thread.sleep(11000);	
-		
-		// robot.keyPress(KeyEvent.VK_ESCAPE);
-		// Thread.sleep(50);
-		// robot.keyRelease(KeyEvent.VK_ESCAPE);
-		// Thread.sleep(50);
-		// WebElement _loginXButton = driver.findElement
-		// (By.cssSelector(_login._loginXButton));
-		// _loginXButton.click();
-		// Thread.sleep(15000);	
-
+		Thread.sleep(10000);			
 		
 		//================================================= C A M P A I G N   C R E A T I O N ==============================================//		
 		WebElement _createCampaign = driver.findElement
 		(By.cssSelector(_campaign._createCampaign));
 		_createCampaign.click();
-		Thread.sleep(5000);
+		Thread.sleep(9000);
 
 			WebElement _campaignNameTextArea = driver.findElement
 			(By.xpath(_campaign._campaignNameTextArea));
 			_campaignNameTextArea.click();
 			_campaignNameTextArea.sendKeys(_allTextInputs._campaignName_Value);
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 		
 				WebElement _campaignType_Regulatory = driver.findElement
 				(By.cssSelector(_campaign._campaignType_Regulatory));
@@ -109,13 +98,13 @@ public class CampaginDataCreation {
 								Thread.sleep(200);
 								_widgetTextArea.click();
 								_widgetTextArea.sendKeys(_allTextInputs._basic_Content_WdigetTitle_TextAreaInput);
-								Thread.sleep(2000);
+								Thread.sleep(3000);
 								WebElement _nextButton = driver.findElement
 								(By.cssSelector(_campaign._nextButton));
 								Thread.sleep(100);
 								_nextButton.click();
 
-								Thread.sleep(5000);
+								Thread.sleep(6000);
 								WebElement _widgetQ_UseQuestionButton = driver.findElement
 								(By.cssSelector(_campaign._widgetQ_UseQ));
 								_widgetQ_UseQuestionButton.click();
@@ -125,7 +114,7 @@ public class CampaginDataCreation {
 								(By.cssSelector(_campaign._widgetQ_UseQ_CancelButton));
 								Thread.sleep(300);
 								_widgetQ_UseQ_CancelButton.click();
-								Thread.sleep(2700);
+								Thread.sleep(1000);
 		
 		//=================================================== S H O R T   T E X T ===================================================//		
 		WebElement _widgetQ_CreateQ = driver.findElement
@@ -137,7 +126,7 @@ public class CampaginDataCreation {
 			(By.cssSelector(_campaign._createQ_TextArea));
 			_CreateQ_Input.click();
 			_CreateQ_Input.sendKeys(_allTextInputs._createQ_Input);
-			Thread.sleep(6000);
+			Thread.sleep(200);
 		
 				WebElement _CreateQ_Input_CreateButton = driver.findElement
 				(By.cssSelector(_campaign._createQ_TextArea_CreateButton));
@@ -145,7 +134,7 @@ public class CampaginDataCreation {
 				Thread.sleep(200);
 
 		//=================================================== D R O P D O W N =====================================================//			
-					Thread.sleep(4000);
+					Thread.sleep(2000);
 					WebElement _widgetQ_CreateQ_Dropdown= driver.findElement
 					(By.cssSelector(_campaign._widgetQ_CreateQ_Dropdown));
 					_widgetQ_CreateQ_Dropdown.click();
@@ -182,10 +171,10 @@ public class CampaginDataCreation {
 											WebElement _CreateQ_Input_Dropdown_CreateButton = driver.findElement
 											(By.cssSelector(_campaign._createQ_TextArea_CreateButton));
 											_CreateQ_Input_Dropdown_CreateButton.click();
-											Thread.sleep(2000);		
+											Thread.sleep(1000);		
 			
 		//=================================================== R A D I O =====================================================//			
-		Thread.sleep(2000);
+		Thread.sleep(1300);
 		WebElement _widgetQ_CreateQ_Radio= driver.findElement
 		(By.cssSelector(_campaign._widgetQ_CreateQ));
 		_widgetQ_CreateQ_Radio.click();
@@ -368,7 +357,7 @@ public class CampaginDataCreation {
 								System.out.println("Taking Screenshot..");
 								System.out.println("=====================================================");
 							
-					            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/CampaignCreation/NewCampaignCreated.png"));   	           
+					            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshot/CampaignCreation/NewCampaignCreated.png"));   	           
 					            Thread.sleep(2000);
 					                 	            
 					        } catch (IOException j) {
