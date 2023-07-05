@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
-public class FormSettingsPhoneRequired {
+public class FormSettingsSendTextMessagePhoneRequired {
 
 	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String args[]) throws InterruptedException, AWTException {
@@ -40,7 +40,7 @@ public class FormSettingsPhoneRequired {
 		driver.get(_browser._browserLive);
 
 		// ============================================================== L O G I N
-		Thread.sleep(7000);
+		Thread.sleep(6000);
 		WebElement _email = driver.findElement
 		(By.cssSelector(_login._email));
 		_email.click();
@@ -175,6 +175,14 @@ public class FormSettingsPhoneRequired {
 						js5.executeScript("window.scrollBy(0,1000)", "");
 						
 							Thread.sleep(4000);
+							WebElement _clickSendMessageCheckbox = driver.findElement
+							(By.cssSelector(_campaign._clickSendMessageCheckbox));
+							Thread.sleep(500);
+							_clickSendMessageCheckbox.click();		
+							Thread.sleep(200);
+							_clickSendMessageCheckbox.click();						
+
+							Thread.sleep(3000);
 							WebElement _clickSendMailButton = driver.findElement
 							(By.cssSelector(_campaign._sendMailButton));
 							Thread.sleep(500);
@@ -186,7 +194,7 @@ public class FormSettingsPhoneRequired {
 				System.out.println("=====================================================");
 				System.out.println("Taking Screenshot..");
 				System.out.println("=====================================================");			
-	            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/FormSettings/PhoneRequired1.png"));   	           
+	            FileUtils.copyFile(screenshotMid, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/FormSettings/SendMeTextMessages_PhoneRequired1.png"));   	           
 	            Thread.sleep(2000);                 	            
 	        } catch (IOException j) {
 	            System.out.println(j.getMessage());
@@ -210,7 +218,7 @@ public class FormSettingsPhoneRequired {
 									System.out.println("=====================================================");
 									System.out.println("Taking Screenshot..");
 									System.out.println("=====================================================");			
-									FileUtils.copyFile(_phoneArea, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/FormSettings/PhoneRequired2.png"));   	           
+									FileUtils.copyFile(_phoneArea, new File("/Users/jahsavaged/Desktop/CiviTestScreenshotLive/FormSettings/SendMeTextMessages_PhoneRequired2.png"));   	           
 									Thread.sleep(2000);                 	            
 								} catch (IOException j) {
 									System.out.println(j.getMessage());

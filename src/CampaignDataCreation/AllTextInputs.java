@@ -2,24 +2,24 @@ package CampaignDataCreation;
 
 public class AllTextInputs {
 
-	public String _campaignName_Value = "Jah7";
+	public String _campaignName_Value = "Jah10";
 	public String _pathBackgroundImage = "C:\\Users\\Jahh\\Desktop\\BackGround";
 	public String _basic_Content_WdigetTitle_TextAreaInput = "Test";
 	public String _createQ_Input = "Testing";
 	public String _widgetFirstName = "Jah";
 	public String _widgetLastName = "Savaged";
-	public String _test = "RegressionTestingMain";
+	public String _test = "RegressionTestingLive-July3";
 	public String _imageBackground = "demonn";
 	public String _colorCode = "#0000FF";
 	public String _colorCodeButton = "#808080";
 	public String _fontColorCode = "#FF0000";	
-	public String _email = "ao15@mvp.dev";
+	public String _email = "k6@mvp.dev";
 	public String _address = "Cebu";
 	public String _city = "Cebu";
 	public String _state = "CA";
 	public String _ZIP = "0917";
 	public String _phone = "1234567895";
-	public String _kioskEmail = "jar+003@mvp.dev";	
+	public String _kioskEmail = "jar+0.3@mvp.dev";	
 	public String _constituentAddress = "Po Box 4110";
 	public String _constituentCity = "Buena Vista, Colorado(CO)";
 	public String _constituentZIP = "81211";
@@ -39,14 +39,15 @@ public class AllTextInputs {
 	public String _campaignPageBody = "Automated testing is a software testing technique that automates the process of validating the functionality of software and ensures it meets requirements before being released into production. With automated testing, an organization can run specific software tests at a faster pace without human testers..";
 	
 	public String _customCreationCity = "Cebu";
-	public String _customCreationName = "FammyT";
+	public String _customCreationName = "FammyTTY";
 	public String _customCreationPosition = "QA Tester";
-	public String _customCreationEmail = "jah+15@mvp.dev";
+	public String _customCreationEmail = "jah+17@mvp.dev";
 	public String _customCreationPhone = "1233455678";
 	
 	public String _searchCongress = "Markey";
 	public String _searchState = "Acosta";
-	public String _customState = "FammyT";
+	public String _customState = "JahTest";
+	public String _w3SchoolLink = "https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default";
 
 
 

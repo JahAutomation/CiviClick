@@ -65,6 +65,7 @@ public class Elements {
 	public String _flag4 = "#email_div > div.bubble-element.Group.baTaJaQg0.bubble-r-container.flex.column > div.bubble-element.Group.baTaPrn3.bubble-r-container.flex.row > div.bubble-element.Group.baTnog10.bubble-r-container.flex.column > input";
 	public String _previewCloseButton = "#sidemenu > div.bubble-element.Group.baTaJaOaT0.bubble-r-container.flex.row > div > button > svg > text";	
 	public String _gotoDisplayTab= "#menu-item > div.clickable-element.bubble-element.Group.baTaHaWr0.bubble-r-container.flex.row > div.bubble-element.Text.baTaHaWt0.bubble-r-vertical-center > div";
+	public String _gotoContentTab= ".baTaHaXaN0 > div:nth-child(1)";
 	public String _advocatesActionTextArea= "#action_advocate";
 	public String _clickWidgetCode= "#file_upload > div > div.bubble-element.Group.baTaJaIaD0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaHo0.bubble-r-container.flex.column > textarea";
 	public String __htmlEditor= "#textareawrapper > div > div.CodeMirror-scroll > div.CodeMirror-sizer > div";
@@ -83,8 +84,8 @@ public class Elements {
 	public String _clickCampaignWidgetTab= "#file_upload > div > div.bubble-element.Group.baTaJaGaS0.bubble-r-container.flex.row > div.clickable-element.bubble-element.Group.baTaJaGaU0.bubble-r-container.fixed > div";
 	public String _clickImageHeaderStyle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaJb0.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaJaJaB0.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.column.entry-3 > div > div.clickable-element.bubble-element.Group.baTaKpz5.bubble-r-container.flex.column > div > img";
 	public String _clickImageTopStyle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaJb0.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaJaJaB0.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.column.entry-4 > div > div.clickable-element.bubble-element.Group.baTaKpz5.bubble-r-container.flex.column > div > img";
-	public String _clickImageCenterStyle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaJb0.bubble-r-container.flex.column > div.bubble-element.RepeatingGroup.baTaJaJaB0.bubble-rg > div.bubble-element.group-item.bubble-r-container.flex.column.entry-5 > div > div.clickable-element.bubble-element.Group.baTaKpz5.bubble-r-container.flex.column > div > img";
-	public String _clickImageBottomStyle= "div.group-item:nth-child(6) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)";
+	public String _clickImageCenterStyle= "div.RepeatingGroup:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2)";
+	public String _clickImageBottomStyle= "div.RepeatingGroup:nth-child(2) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2)";
 	public String _showNumberActionsTaken= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaMd0.bubble-r-container.flex.row > div.bubble-element.ionic-IonicToggle.clickable-element > label";
 	public String _checkingActionDetails= "//div[@class='bubble-element Group baTytaO5 bubble-r-container flex row']/div[@class='bubble-element Group baTytaN5 bubble-r-container flex row']/div/following-sibling::div";
 	public String _inputCampaignPageTitle= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaKr0.bubble-r-container.flex.column > input";
@@ -92,7 +93,7 @@ public class Elements {
 	public String _clickBrowseFileLogoButton= "#browse_logo";
 	public String _clickUploadImageButton= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaYaL0.bubble-r-container.flex.column > div.bubble-element.Group.baTaSaZaJ0.bubble-r-container.flex.row > div.clickable-element.bubble-element.Group.baTaSaaE0.bubble-r-container.flex.row > div";
 	public String _clickShowAccountLogoOnPageButton= "#file_upload > div > div.bubble-element.Group.baTaJaIaM0.bubble-r-container.flex.column > div.bubble-element.Group.baTaRaFaL6.bubble-r-container.flex.row > div > div > div.bubble-element.Group.baTaJaLj0.bubble-r-container.flex.row > div.bubble-element.ionic-IonicToggle.clickable-element > label";
-	public String _accountLogo= "body > div.bubble-element.Page.baTaKaTaU3.bubble-r-container.flex.column.main-page > div.bubble-element.Group.baTaKbe0.bubble-r-container.flex.column > div.bubble-element.Group.baTaKaUaO3.bubble-r-container.flex.row > div.bubble-element.Group.baTaKaYu3.bubble-r-container.flex.column > div.bubble-element.Image.baUaAqv > img";
+	public String _accountLogo= "div.Image:nth-child(1) > img:nth-child(1)";
 	public String _gotoTargetsTab= "#menu-item > div.clickable-element.bubble-element.Group.baTaHaWw0.bubble-r-container.flex.row > div.bubble-element.Text.baTaHaWy0.bubble-r-vertical-center";
 	
 	public String _selectAllButton= "#g-content > div.bubble-element.Group.baTaIlaW1.bubble-r-container.flex.column > div > div.bubble-element.Group.baTaJaFaK1.bubble-r-container.flex.row > div.bubble-element.Group.baTaLoaW4.bubble-r-container.flex.column > div.bubble-element.Group.baTaJaFb1.bubble-r-container.flex.row > div.bubble-element.Group.baTaLok4.bubble-r-container.flex.row > div.clickable-element.bubble-element.Group.baTaLop4.bubble-r-container.flex.row > button > svg > text";
@@ -128,6 +129,7 @@ public class Elements {
 	public String _targets_SearhArea= "#search-target";
 	public String _searchButton= "#g-content > div.bubble-element.Group.baTaIlaW1.bubble-r-container.flex.column > div > div.bubble-element.Group.baTaJaFq1.bubble-r-container.flex.row > div.bubble-element.Group.baTaJaFr1.bubble-r-container.flex.row > div > div";
 
+	public String _nextButton= ".baTaJaVaY1";
 
 
 
